@@ -1,0 +1,46 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.banner-gracias {
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 5rem 0;
+    display: flex;
+    align-items: center;
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        h1{
+            color: v.$blanco;
+            font-family: "GorditaBlack";
+            max-width: 550px;
+            font-size: 4.5rem;
+            line-height: 6rem;
+            text-align: center;
+            @include m.text-shadow;
+            &+p{
+                font-family: "GorditaMedium";
+            }
+        }
+        p{
+            color: v.$blanco;
+            // margin-bottom: 2rem;
+            font-size: 1.8rem;
+            line-height: 2.3rem;
+        }
+        button + p {
+            font-family: "GorditaRegular";
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+        ul{
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+        }
+    }
+}

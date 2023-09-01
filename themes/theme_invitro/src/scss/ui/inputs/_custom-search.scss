@@ -1,0 +1,25 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.custom-search{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    border-radius: 35px;
+    background-color: v.$celeste;
+    padding: .4rem 1.5rem;
+    label{
+        color: v.$blanco;
+        font-family: "GorditaBold";
+        font-size: 1.1rem;
+    }
+    input{
+        background-color: v.$blanco;
+        border-radius: 27px;
+        width: 100%;
+        padding: .7rem 1.2rem;
+        border: none;
+        font-family: "GorditaRegular";
+    }
+}

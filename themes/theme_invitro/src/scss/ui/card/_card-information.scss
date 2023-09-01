@@ -1,0 +1,54 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.card-information{
+    background-color: v.$verde;
+    height: 420px;
+    padding-inline: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    border-radius: 50px;
+    transition: all ease .5s;
+    &__header{
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    &__title{
+        color: v.$blanco;
+        // font-size: 2.1rem;
+    }
+    &__body{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        color: v.$blanco;
+        text-align: center;
+        p{
+            width: 70%;
+            margin-inline: auto;
+            // line-height: 1.8;
+            line-height: 1.5em;
+            font-weight: normal;
+        }
+    }
+    &--yellow{
+        background-color: v.$amarillo;
+    }
+    &:hover{
+        .card-information__body{
+            display: flex;
+        }
+        .card-information__header{
+           flex-direction: row;
+           margin-bottom: 3rem;
+           gap: 1rem;
+        }
+        .card-information__logo{
+            width: 50px;
+            height: auto;
+        }
+    }
+}

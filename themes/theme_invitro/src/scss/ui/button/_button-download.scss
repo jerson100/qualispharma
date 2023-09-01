@@ -1,0 +1,11 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.button--download{
+    gap: 1rem;
+    min-width: auto;
+    .button__icon{
+        height: 38px;
+        width: auto;
+    }
+}

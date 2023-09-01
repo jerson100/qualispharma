@@ -1,0 +1,113 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.somos{
+    padding: 5.5rem 0;
+    .contenido{
+        width: min(100%, 980px);
+        margin: 0 auto;
+    }
+    h2, p{
+        text-align: center;
+    }
+    h2{
+        color: v.$celeste;
+        font-family: v.$bold;
+        margin-bottom: 50px;
+    }
+    p{
+        color: v.$negro2;
+        font-family: v.$regular;
+        font-weight: 100;
+        line-height: 1.5em;
+    }
+}
+
+.informacion{
+    background-color: rgba(v.$azul, 0.2);
+    padding: 5.5rem 0;
+    &__content{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 6rem;
+        row-gap: 4rem;
+    }
+    .card-informacion {
+        grid-column: 1 / 1 span;
+    }
+    &__valores{
+        border-radius: 50px;
+        padding: 3rem 9rem;
+        background-color: #F1F1F1;
+        @include m.shadow(0px,0px,20px,v.$sombra);
+        grid-column: 1 / 2 span;
+        &-section-title{
+            color: v.$celeste;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.1rem;
+            font-family: "GorditaBold";
+        }
+        &-list{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        &-item{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+        &-title{
+            color: v.$verde;
+            text-align: center;
+            font-size: 1.4rem;
+            max-width: 190px;
+            font-family: "GorditaMedium";
+        }
+    }
+}   
+
+.capacidades{
+    padding: 5.5rem 0;
+    h2 {
+        color: v.$celeste;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    p{
+        text-align: center;
+        max-width: 850px;
+        margin: 0 auto;
+        margin-bottom: 6rem;
+        color: #585858;
+        font-family: "GorditaRegular";
+        font-weight: 100;
+        line-height: 1.5em;
+    }
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 12rem;
+    }
+    &__left{
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            list-style: none;
+            li{
+                color: v.$verde;
+                font-family: "GorditaRegular";
+            }
+        }
+    }
+    &__right{
+        img{
+            border-radius: 57px;
+            box-shadow: 1rem 1rem 5px v.$celeste;
+        }
+    }
+}

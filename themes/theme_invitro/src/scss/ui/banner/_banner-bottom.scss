@@ -1,0 +1,22 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.banner-bottom{
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+    &__bg-text {
+        background-color: rgba(#fff, .91);
+        border-radius: 60px;
+        padding: 3rem;
+        transform: translateX(20%);
+        p{
+            font-size: 1.2rem;
+            line-height: 2.2;
+        }
+    }
+}

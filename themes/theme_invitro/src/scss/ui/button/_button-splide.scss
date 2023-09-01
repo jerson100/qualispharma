@@ -1,0 +1,23 @@
+@use "base/variables" as v;
+
+.splide-navigation-dott{
+    .splide__pagination__page{
+        width: 20px;
+        height: 20px;
+    }
+    .splide__pagination{
+        padding-top: 4rem;
+        position: relative;
+        left: initial;
+        bottom: initial;
+        left: initial;
+        gap: 1rem;
+        button{
+            border: solid 1px #707070;
+            background-color: v.$blanco;
+            &.is-active{
+                background-color:  #8E8D8D;
+            }
+        }
+    }
+}

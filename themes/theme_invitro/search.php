@@ -29,10 +29,10 @@ $query = new WP_Query(
     <section class="product-search">
         <div class="contenedor">
             <div class="product-search__content">
-                <div class="custom-select-link">
+                <div class="custom-select-link text">
                     <div class="custom-select-link__screen"></div>
                     <div class="custom-select-link__front">
-                        <span class="custom-select-link__text">Categorías</span>
+                        <span class="custom-select-link__text ">Categorías</span>
                         <div class="custom-select-link__icon">
                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
                                 height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">

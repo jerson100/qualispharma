@@ -19,7 +19,7 @@ get_header();
     <section class="product-search">
         <div class="contenedor">
             <div class="product-search__content">
-                <div class="custom-select-link">
+                <div class="custom-select-link text">
                     <div class="custom-select-link__screen"></div>
                     <div class="custom-select-link__front">
                         <span class="custom-select-link__text">Categorías</span>
@@ -33,19 +33,13 @@ get_header();
                         </div>
                     </div>
                     <div class="custom-select-link__back">
-                        <!-- <ul class="custom-select-link__list"> -->
                         <?php
-                        // Obtener todas las categorías de la taxonomía 'productosgenero'
                         $terms = get_terms(
                             array(
                                 'taxonomy' => 'productosgenero',
                                 'hide_empty' => false,
-                                // Mostrar incluso las categorías sin entradas
                             )
                         );
-
-
-
                         if (!empty($terms) && !is_wp_error($terms)) {
                             echo '<ul class="custom-select-link__list">';
                             foreach ($terms as $term) {
@@ -54,13 +48,6 @@ get_header();
                             echo '</ul>';
                         }
                         ?>
-                        <!-- <li class="custom-select-link__item">
-                                <a href="">Línea Diabetes</a>
-                            </li>
-                            <li class="custom-select-link__item">
-                                <a href="">Línea Cardio</a>
-                            </li> -->
-                        <!-- </ul> -->
                     </div>
                 </div>
                 <?php get_search_form(); ?>

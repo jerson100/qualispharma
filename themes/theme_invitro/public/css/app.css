@@ -2087,12 +2087,11 @@ footer ul svg path {
 
 .custom-select-link {
   position: relative;
-  z-index: 9;
+  z-index: 10;
 }
 .custom-select-link__text {
   color: #ffffff;
   font-family: "GorditaBold";
-  font-size: 1.1rem;
 }
 .custom-select-link__front {
   border-radius: 35px;
@@ -2169,7 +2168,6 @@ footer ul svg path {
 .custom-search label {
   color: #ffffff;
   font-family: "GorditaBold";
-  font-size: 1.1rem;
 }
 .custom-search input {
   background-color: #ffffff;
@@ -2177,6 +2175,7 @@ footer ul svg path {
   width: 100%;
   padding: 0.7rem 1.2rem;
   border: none;
+  font-size: 0.9em;
   font-family: "GorditaRegular";
 }
 /*# sourceMappingURL=app.css.map */

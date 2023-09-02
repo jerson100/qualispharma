@@ -9,10 +9,10 @@
     border-radius: 35px;
     background-color: v.$celeste;
     padding: .4rem 1.5rem;
+    // font-size: 1.1rem;
     label{
         color: v.$blanco;
         font-family: "GorditaBold";
-        font-size: 1.1rem;
     }
     input{
         background-color: v.$blanco;
@@ -20,6 +20,7 @@
         width: 100%;
         padding: .7rem 1.2rem;
         border: none;
+        font-size: .9em;
         font-family: "GorditaRegular";
     }
 }

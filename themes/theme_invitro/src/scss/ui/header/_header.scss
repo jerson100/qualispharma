@@ -10,6 +10,9 @@ header{
     z-index: 10;
     background: v.$blanco;
     @include m.flex(center, 0);
+    @media (max-width: v.$desktop){
+        height: 80px;
+    }
     ul{
         list-style: none;
         @include m.flex(flex-end, 6%);
@@ -21,6 +24,9 @@ header{
     }
     .logo{
         max-width: 300px;
+        @media (max-width: v.$desktop){
+            max-width: 200px;
+        }
         img{
             width: 100%;
         }
@@ -30,6 +36,7 @@ header{
         flex-wrap: nowrap;
         position: relative;
         @include m.flex(flex-end, 6%);
+        
         li{
             a{
                 color: v.$verde;
@@ -56,13 +63,23 @@ header{
             }
         }
         &_links{
-            width: calc(94% - 73px);
+            // width: calc(94% - 73px);
+            width: 100%;
+            @media (max-width: v.$desktop){
+                display: none;
+            }
         }
     }
     .burger{
         width: 43px;
         position: absolute;
         right: calc((56px + 2rem) * -1);
+        @media (max-width: v.$television){
+            width: 28px;
+        }
+        @media (max-width: v.$desktop){
+            right: 0;
+        }
         button{
             width: 100%;
             @include m.flex(center, 10px);
@@ -70,9 +87,15 @@ header{
             background: none;
             border: none;
             padding: 0;
+            @media (max-width: v.$television){
+                gap: 5px;
+            }
             div{
                 width: 100%;
                 height: 10px;
+                @media (max-width: v.$television){
+                    height: 6px;
+                }
                 border-radius: 8px;
                 background: v.$celeste;
                 @include m.transition;
@@ -100,6 +123,13 @@ header{
     height: 100vh;
     background: rgba($color: v.$celeste, $alpha: .95);
     @include m.transition;
+    &__top{
+        display: none;
+        margin-bottom: 1rem;
+        @media (max-width: v.$desktop){
+            display: block;
+        }
+    }
     &.active{
         right: 0;
     }
@@ -138,7 +168,13 @@ header{
     &_links{
         a{
             color: v.$blanco;
-            font-size: 1.4em;
+            font-size: 1.3rem;
+            @media (max-width: v.$television){
+                font-size: 1.1rem;
+            }
+            @media (max-width: v.$desktop){
+                font-size: .9rem
+            }
             font-weight: 100;
             &:hover{
                 font-family: v.$bold;
@@ -155,7 +191,7 @@ header{
         &.media{
             margin-top: 5vh;
             a{
-                @include m.contain(63px);
+                @include m.contain(42px);
                 padding: 7px;
                 background: v.$blanco;
                 border-radius: 5px;

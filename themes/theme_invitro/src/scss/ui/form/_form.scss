@@ -26,6 +26,12 @@
             min-height: 48px;
             padding-inline: 16px;
             font-size: 1.025rem;
+            @media (max-width: v.$television){
+                font-size: .9rem;
+            }
+            @media (max-width: v.$desktop){
+                font-size: .8rem;
+            }
         }
         [type="submit"]{
             margin-top: 20px;

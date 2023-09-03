@@ -5,5 +5,11 @@
     padding: 4rem 0 5.5rem;
     &_grid{
         @include m.grid(3, 40px 20px);
+        @media (max-width: v.$desktop){
+            @include m.grid(2, 40px 20px);
+        }
+        @media (max-width: v.$tablet){
+            @include m.grid(1, 40px 20px);
+        }
     }
 }

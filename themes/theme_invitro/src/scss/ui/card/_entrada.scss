@@ -36,6 +36,12 @@
                 color: v.$celeste;
                 font-family: v.$bold;
                 margin-bottom: 14px;
+                @media (max-width: v.$television){
+                    font-size: 1.1rem;
+                }
+                @media (max-width: v.$desktop){
+                    font-size: .9rem;
+                }
             }
             &:nth-child(2){
                 line-height: 1.6em;
@@ -55,6 +61,14 @@
             color: v.$negro2;
             font-size: 1.175em;
             line-height: 1.6em;
+            @media (max-width: v.$television){
+                font-size: 1em;
+                line-height: 1.5em;
+            }
+            @media (max-width: v.$desktop){
+                font-size: .9em;
+                line-height: 1.5em;
+            }
         }
     }
 }

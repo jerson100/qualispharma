@@ -4,6 +4,10 @@
     .splide__pagination__page{
         width: 20px;
         height: 20px;
+        @media (max-width: v.$desktop){
+            width: 18px;
+            height: 18px;
+        }
     }
     .splide__pagination{
         padding-top: 4rem;
@@ -12,6 +16,9 @@
         bottom: initial;
         left: initial;
         gap: 1rem;
+        @media (max-width: v.$desktop){
+            padding-top: 2rem;
+        }
         button{
             border: solid 1px #707070;
             background-color: v.$blanco;

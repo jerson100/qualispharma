@@ -6,17 +6,42 @@
     padding-bottom: 5rem;
     &__content {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 55% 1fr;
         align-items: center;
+        @media (max-width: v.$desktop){
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+    }
+    &__image{
+        img{
+            max-width: 100%;
+            object-fit: cover;
+            @media (max-width: v.$desktop){
+                margin: auto;
+                display: block;
+                max-height: 500px;
+            }
+        }
     }
     &__bg-text {
         background-color: rgba(#fff, .91);
         border-radius: 60px;
         padding: 3rem;
         transform: translateX(20%);
+        @media (max-width: v.$desktop){
+            transform: translateX(0%);
+            padding: 0;
+        }
         p{
             font-size: 1.2rem;
             line-height: 2.2;
+            @media (max-width: v.$television){
+                font-size: 1rem;
+            }
+            @media (max-width: v.$television){
+                font-size: .8rem;
+            }
         }
     }
 }

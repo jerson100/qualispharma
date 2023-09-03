@@ -2,68 +2,6 @@
 @use "base/variables" as v;
 
 
-.main-objetives{
-
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    background-color: rgba(v.$celeste, 0.2);
-
-    h2 {
-        color: v.$celeste;
-        text-align: center;
-        margin-bottom: 5rem;
-        font-family: "GorditaMedium";
-        font-size: 2.5rem;
-    }
-
-    &__list{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        list-style: none;
-    }
-
-    &__item{
-        padding: 2.4rem;
-        border-radius: 57px;
-        cursor: pointer;
-        background-image: linear-gradient(to bottom, #ADE44C, #62BDBE);
-        height: 300px;
-        img{
-            transition: all ease .25s;
-            transform-origin: top;
-            width: 120px;
-            margin-bottom: 1.5rem;
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
-            transform: scale(1.8);
-            transition-delay: .1s;
-            &:hover{
-                transition: all ease .25s;
-                transform: scale(1);
-                &+p{
-                    opacity: 1;
-                    visibility: visible;
-                    transition-delay: .25s;
-                }
-            }
-        }
-        p{
-            color: v.$blanco;
-            font-family: "GorditaMedium";
-            font-size: .9rem;
-            line-height: 1.5;
-            text-align: center;
-            transition: all ease .25s;
-            opacity: 0;
-            visibility: hidden;
-        }
-    }
-    
-
-}
-
 .why-line-we-handle{
     padding-top: 6rem;
     padding-bottom: 6rem;
@@ -71,19 +9,43 @@
         color: v.$celeste;
         text-align: center;   
         margin-bottom: 3rem;
+        @media (max-width: v.$desktop){
+            margin-bottom: 2rem;
+        }
     }
     &__grid{
         background-color: #E5E2E2;
         border-radius: 60px;
         display: grid;
-        grid-template-areas: "img img description";
+        grid-template-areas: "img description";
         grid-template-columns: 45% 1fr;
         margin-top: 5rem;
         margin-bottom: 5rem;
+        @media (max-width: v.$television) {
+            grid-template-columns: 50% 1fr;
+            margin-bottom: 4rem;
+            margin-top: 4rem;
+        }
+        @media (max-width: v.$desktop) {
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            "img"
+            "description";
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
     }
     &__left{
         padding-left: 4rem;
         grid-area: img;
+        @media (max-width: v.$television) {
+            padding: 0 2rem;
+        }
+        @media (max-width: v.$tablet) {
+            padding: 1rem;
+        }
+        
     }
     &__img-container{
         background-color: #585858;
@@ -91,8 +53,11 @@
         border: solid 1px #707070;
         height: 100%;
         transform: scaleY(1.2);
-        min-height: 400px;
         position: relative;
+        min-height: 400px;
+        @media (max-width: v.$television) {
+            min-height: 250px;
+        }
         img{
             position: absolute;
             left: 0;
@@ -106,10 +71,16 @@
     }
     &__right{
         grid-area: description;
-        padding: 4rem 4rem;
+        padding: 4rem;
+        @media (max-width: v.$television) {
+            padding: 2rem;
+        }
+        @media (max-width: v.$tablet) {
+            padding: 1rem;
+        }
         p{
             color: #585858;
-            font-size: 1.2rem;
+            // font-size: 1.2rem;
             line-height: 2.3;
         }
     }
@@ -123,12 +94,13 @@
         color: v.$verde;
         margin-bottom: 5rem;
         text-align: center;
-        font-size: 2.2rem;
+        font-family: "GorditaBold";
         line-height: 2;
     }
     &__list{
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         list-style: none;
         gap: 3rem;
     }
@@ -137,7 +109,6 @@
         border-radius: 40px;
         padding: 2rem;
         position: relative;
-        font-size: 1.1rem;
         &-number{
             color: v.$celeste;
             font-family: "GorditaMedium";
@@ -154,6 +125,15 @@
             align-items: center;
             transform: translate(-50%, -50%);
             max-width: 100%;
+            @media (max-width: v.$television){
+                width: 50px;
+                height: 50px;
+                transform: translate(-25%, -25%);
+            }
+            @media (max-width: v.$desktop){
+                width: 38px;
+                height: 38px;
+            }
         }
         &-title{
             color: v.$verde;

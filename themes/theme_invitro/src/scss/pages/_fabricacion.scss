@@ -12,6 +12,15 @@
         color: v.$blanco;
         font-size: 1.9rem;
         line-height: 2.8rem;
+        @media (max-width: v.$television) {
+            font-size: 1.4rem;
+            line-height: 2.4rem;
+            max-width: 700px;
+        }
+        @media (max-width: v.$desktop) {
+            font-size: 1.2rem;
+            line-height: 2rem;
+        }
         font-family: "GorditaBold";
     }
 }
@@ -19,6 +28,10 @@
 .nuestras-plantas{
     padding-top: 8rem;
     padding-bottom: 8rem;
+    @media (max-width: v.$desktop){
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
     &__title{
         color: v.$celeste;
         text-align: center;
@@ -29,21 +42,47 @@
         grid-template-columns: 1fr 1fr;
         gap: 6rem;
         padding-bottom: 1.5rem;
+        @media (max-width: v.$television){
+            gap: 3rem;
+        }
+        @media (max-width: v.$desktop){
+            gap: 2rem;
+        }
+        @media (max-width: v.$tablet){
+            grid-template-columns: 1fr;
+        }
     }
     &__left{
+        @media (max-width: v.$tablet){
+            margin-right: 1rem;
+        }
         img {
             width: 100%;
             height: auto;
             object-fit: cover;
+            @media (max-width: v.$tablet){
+                max-height: 400px;
+                display: block;
+                margin-inline: auto;
+            }
         }
     }
     &__right{
         padding-top: 2rem;
         &-top{
             margin-bottom: 4rem;
+            @media (max-width: v.$television){
+                margin-bottom: 2rem;
+            }
             h3, span{
                 font-family: "GorditaBold";
                 font-size: 1.8rem;
+                @media (max-width: v.$television){
+                    font-size: 1.5rem;
+                }
+                @media (max-width: v.$desktop){
+                    font-size: 1.2rem;
+                }
             }
             h3{
                 color: v.$verde;
@@ -55,7 +94,6 @@
         }
         p{
             color: #585858;
-            font-size: 1.1rem;
             line-height: 2.2;
             font-family: "GorditaRegular";
         }
@@ -66,15 +104,25 @@
     padding-top: 4rem;
     padding-bottom: 7rem;
     background-color: #F1F1F1;
+    @media (max-width: v.$desktop){
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
     &__container{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 2rem;
         align-items: center;
+        @media (max-width: v.$desktop){
+            gap: 1rem;
+        }
     }
     &__left{
         grid-column-start: 1;
         grid-column-end: 3;
+        img{
+            max-width: 100%;
+        }
     }
     &__right {
         p{
@@ -83,21 +131,16 @@
             font-family: "GorditaBold";
             max-width: 380px;
             line-height: 1.7;
+            @media (max-width: v.$television){
+                font-size: 1.2rem;
+            }
+            @media (max-width: v.$desktop){
+                font-size: 1rem;
+            }
+            @media (max-width: v.$tablet){
+                font-size: .8rem;
+            }
         }
     }
 }
 
-.partners{
-    padding-top: 4rem;
-    padding-bottom: 5rem;
-    &__content{
-        h2{
-            margin-bottom: 3rem;
-            font-family: "GorditaMedium";
-            font-size: 2.2rem;
-        }
-        img{
-            border-radius: 25px;
-        }
-    }
-}

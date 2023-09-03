@@ -93,7 +93,7 @@ get_header();
                     </div>
                 </section>
                 <section class="informacion__valores">
-                    <h3 class="informacion__valores-section-title">Valores</h3>
+                    <h3 class="h2 down informacion__valores-section-title">Valores</h3>
                     <ul class="informacion__valores-list">
                         <li class="informacion__valores-item">
                             <img src="<?php echo IMG ?>/nosotros/01.svg" alt="" class="informacion__valores-img" />

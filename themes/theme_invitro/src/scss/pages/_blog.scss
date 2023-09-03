@@ -4,8 +4,20 @@
 .blog{
     &_entries{
         padding-block: 6rem 7.5rem;
+        @media (max-width: v.$television){
+            padding-block: 5rem 6.5rem;
+        }
+        @media (max-width: v.$desktop){
+            padding-block: 4rem;
+        }
         .grilla{
             @include m.grid(3, 40px 20px);
+            @media (max-width: v.$desktop){
+                @include m.grid(2, 40px 20px);
+            }
+            @media (max-width: v.$tablet){
+                @include m.grid(1, 40px 20px);
+            }
         }
     }
 }

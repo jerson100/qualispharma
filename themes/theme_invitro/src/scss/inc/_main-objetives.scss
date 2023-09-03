@@ -1,0 +1,84 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.main-objetives{
+
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    
+    h2 {
+        color: v.$celeste;
+        text-align: center;
+        margin-bottom: 5rem;
+        line-height: 1.5;
+        font-family: "GorditaMedium";
+        // font-size: 2.5rem;
+        @media (max-width: v.$television){
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        list-style: none;
+    }
+
+    &__item{
+        padding: 2.4rem;
+        border-radius: 57px;
+        cursor: pointer;
+        background-image: linear-gradient(to bottom, #ADE44C, #62BDBE);
+        height: 300px;
+        @media (max-width: v.$television){
+            height: 240px;
+        }
+        &:hover{
+            img{
+                transition: all ease .25s;
+                transform: scale(1);
+                @media (max-width: v.$television){
+                    max-width: 70px;
+                }
+                &+p{
+                    opacity: 1;
+                    visibility: visible;
+                    transition-delay: .25s;
+                }
+            }
+        }
+        img{
+            transition: all ease .25s;
+            transform-origin: top;
+            width: 120px;
+            margin-bottom: 1.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            transform: scale(1.8);
+            transition-delay: .1s;
+            @media (max-width: v.$television){
+                max-width: 100px;
+                transform: scale(1.6);
+                margin-bottom: 1rem;
+            }
+        }
+        p{
+            color: v.$blanco;
+            font-family: "GorditaMedium";
+            font-size: .9rem;
+            line-height: 1.5;
+            text-align: center;
+            transition: all ease .25s;
+            opacity: 0;
+            visibility: hidden;
+            @media (max-width: v.$television){
+                font-size: .8rem;
+            }
+            @media (max-width: v.$desktop){
+                font-size: .7rem;
+            }
+        }
+    }
+}

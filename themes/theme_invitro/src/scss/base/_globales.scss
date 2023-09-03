@@ -62,6 +62,12 @@ textarea, button, input, select, option {
     width: min(88%, 1400px);
     // width: min(88%, 1500px);
     margin-inline: auto;
+    @media (max-width: v.$television){
+        width: min(78%, 1400px);
+    }
+    @media (max-width: v.$desktop){
+        width: min(88%, 1400px);
+    }
     &.xl{
         width: min(94%, 1760px);
     }
@@ -113,4 +119,8 @@ main, section, header, footer{
 
 .shadow-card{
     @include m.shadow(0, 3px, 6px, #00000029);
+}
+
+.bg-celeste{
+   background-color: rgba(v.$celeste, 0.2);
 }

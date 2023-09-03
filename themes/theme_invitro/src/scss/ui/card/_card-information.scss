@@ -4,6 +4,16 @@
 .card-information{
     background-color: v.$verde;
     height: 420px;
+    @media (max-width: v.$television){
+        height: 320px;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    @media (max-width: v.$desktop){
+        height: 280px;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
     padding-inline: 3rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -12,6 +22,12 @@
     &__header{
         display: flex;
         gap: 2rem;
+        @media (max-width: v.$television){
+            gap: 1rem;
+        }
+        @media (max-width: v.$desktop){
+            gap: 0;
+        }
         align-items: center;
         justify-content: center;
         flex-direction: column;
@@ -19,6 +35,14 @@
     &__title{
         color: v.$blanco;
         // font-size: 2.1rem;
+    }
+    &__logo{
+        @media (max-width: v.$television){
+            width: 120px;
+        }
+        @media (max-width: v.$desktop){
+            width: 100px;
+        }
     }
     &__body{
         display: none;
@@ -28,6 +52,12 @@
         text-align: center;
         p{
             width: 70%;
+            @media (max-width: v.$television){
+                width: 80%;
+            }
+            @media (max-width: v.$desktop){
+                width: 100%;
+            }
             margin-inline: auto;
             // line-height: 1.8;
             line-height: 1.5em;
@@ -44,6 +74,12 @@
         .card-information__header{
            flex-direction: row;
            margin-bottom: 3rem;
+           @media (max-width: v.$television){
+               margin-bottom: 2rem;
+            }
+            @media (max-width: v.$desktop){
+                margin-bottom: 1rem;
+            }
            gap: 1rem;
         }
         .card-information__logo{

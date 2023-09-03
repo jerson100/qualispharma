@@ -4,7 +4,10 @@
 .banner-gracias {
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    min-height: calc(100vh - 116px);
+    @media (max-width: v.$desktop){
+        min-height: calc(100vh - 80px);
+    }
     padding: 5rem 0;
     display: flex;
     align-items: center;
@@ -14,33 +17,62 @@
         justify-content: center;
         align-items: center;
         gap: 3rem;
+        @media (max-width: v.$television){
+            gap: 2rem;
+        }
+        @media (max-width: v.$desktop){
+            gap: 1.5rem;
+        }
         h1{
             color: v.$blanco;
             font-family: "GorditaBlack";
-            max-width: 550px;
             font-size: 4.5rem;
             line-height: 6rem;
             text-align: center;
+            max-width: 550px;
             @include m.text-shadow;
+            @media (max-width: v.$television){
+                font-size: 3rem;
+                line-height: 5rem;
+            }
+            @media (max-width: v.$desktop){
+                font-size: 2.2rem;
+                line-height: 3.5rem;
+            }
             &+p{
                 font-family: "GorditaMedium";
             }
         }
         p{
+            text-align: center;
             color: v.$blanco;
             // margin-bottom: 2rem;
-            font-size: 1.8rem;
+            // font-size: 1.8rem;
             line-height: 2.3rem;
         }
         button + p {
             font-family: "GorditaRegular";
-            font-size: 1.5rem;
+            // font-size: 1.5rem;
             line-height: 2rem;
         }
         ul{
             display: flex;
             gap: 1rem;
             list-style: none;
+            li {
+                svg{
+                    width: 38px;
+                    height: 38px;
+                    @media (max-width: v.$television){
+                        width: 32px;
+                        height: 32px;
+                    }
+                    @media (max-width: v.$desktop){
+                        width: 28px;
+                        height: 28px;
+                    }
+                }
+            }
         }
     }
 }

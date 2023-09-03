@@ -56,7 +56,7 @@ $productId = get_the_ID();
                     <?php
                     if (have_rows('single_product_items', $productId)):
                         ?>
-                        <ul class="single-product__body-list">
+                        <ul class="single-product__body-list text">
                             <?php
                             while (have_rows('single_product_items', $productId)):
                                 the_row();

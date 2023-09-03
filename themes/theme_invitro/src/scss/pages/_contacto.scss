@@ -7,12 +7,34 @@
     @include m.flex(center, 0);
     flex-direction: column;
     background: rgba($color: v.$celeste, $alpha: 0.2);
+
+    .row{
+        @media (max-width: v.$desktop) {
+            gap: 2rem;
+            flex-direction: column !important;
+        }
+    }
+
     .col{
         width: 49.5%;
+        @media (max-width: v.$desktop) {
+            width: 80%;
+        }
+        @media (max-width: v.$tablet) {
+            width: 100%;
+        }
     }
 
     .contenido{
         width: min(100%, 440px);
+        @media (max-width: v.$television) {
+            max-width: 300px;
+        }
+        @media (max-width: v.$desktop) {
+            max-width: 250px;
+            margin-left: auto;
+            margin-right: auto;
+        }
         img{
             width: 100%;
             margin-bottom: 40px;
@@ -30,10 +52,15 @@
             }
             svg{
                 @include m.contain(28px);
+                @media (max-width: v.$television) {
+                    @include m.contain(22px);
+                }
+                @media (max-width: v.$desktop) {
+                    @include m.contain(18px);
+                }
             }
             p, a{
                 color: v.$negro;
-                font-size: 1.1em;
             }
         }
     }

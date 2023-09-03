@@ -12,9 +12,9 @@ get_header();
         <div class="contenedor">
             <div class="banner-gracias__content">
                 <h1>¡Gracias por contactarnos!</h1>
-                <p>Nos comunicaremos pronto.</p>
+                <p class="h3">Nos comunicaremos pronto.</p>
                 <button class="button">Volver al Inicio</button>
-                <p>También puedes seguirnos en nuestras redes sociales.</p>
+                <p class="h3">También puedes seguirnos en nuestras redes sociales.</p>
                 <ul>
                     <li><svg id="Icon_awesome-facebook-square" data-name="Icon awesome-facebook-square"
                             xmlns="http://www.w3.org/2000/svg" width="44.294" height="44.291"

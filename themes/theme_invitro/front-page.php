@@ -32,7 +32,7 @@ get_header();
             <div class="contenido">
                 <h1>Nuestra prioridad es la salud de nuestros pacientes</h1>
                 <p>Variedad en productos, calidad, compromiso y confiabilidad.</p>
-                <a href="#">Más información</a>
+                <a href="<?php echo esc_url(home_url() . "/contacto") ?>">Más información</a>
             </div>
         </div>
     </section>

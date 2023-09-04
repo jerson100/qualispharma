@@ -73,11 +73,12 @@ get_header();
                                                     <a href="<?php the_permalink() ?>">Ver más</a>
                                                 </div>
                                                 <div class="card_product_image">
-                                                    <img src="<?php echo get_field('vista')['url'] ?>"
-                                                        title="<?php echo get_field('vista')['title'] ?>"
-                                                        alt="<?php echo get_field('vista')['alt'] ?>"
-                                                        width="<?php echo get_field('vista')['width'] ?>"
-                                                        height="<?php echo get_field('vista')['height'] ?>" loading="lazy">
+                                                    <img src="<?php echo get_field('single_product_vista')['url'] ?>"
+                                                        title="<?php echo get_field('single_product_vista')['title'] ?>"
+                                                        alt="<?php echo get_field('single_product_vista')['alt'] ?>"
+                                                        width="<?php echo get_field('single_product_vista')['width'] ?>"
+                                                        height="<?php echo get_field('single_product_vista')['height'] ?>"
+                                                        loading="lazy">
                                                 </div>
                                             </div>
                                         </div>

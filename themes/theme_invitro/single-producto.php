@@ -106,9 +106,11 @@ $productId = get_the_ID();
                 </div>
                 <div class="single-product__body-right">
                     <div class="single-product__body-cotizar">
-                        <a href="#" class="button button-variant-contained-verde">Cotizar ahora</a>
+                        <a href="<?php echo esc_url(home_url() . "/contacto") ?>"
+                            class="button button-variant-contained-verde">Cotizar ahora</a>
                         <p>Disponible en:</p>
-                        <img src="<?php echo IMG ?>/producto/inkafarma.jpg" alt="">
+                        <img src="<?php echo IMG ?>/producto/inkafarma.jpg" alt="Logo de Inkafarma"
+                            title="Logo de Inkafarma">
                     </div>
                 </div>
             </div>

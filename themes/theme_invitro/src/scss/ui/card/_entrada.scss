@@ -53,6 +53,10 @@
         padding: 4rem 0;
         background: v.$blanco;
 
+        @media (max-width: v.$desktop){
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
         img{
             display: block;
             margin-bottom: 30px;
@@ -75,7 +79,19 @@
 
 .similares{
     background: rgba($color: v.$celeste, $alpha: .2);
-    padding-block: 5.5rem;
+    // padding-block: 5.5rem;
+    
+    padding: 7rem 0;
+
+    @media (max-width: v.$television){
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    @media (max-width: v.$desktop){
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
     .splide{
         &__track{
             padding: 6px !important;

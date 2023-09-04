@@ -3,13 +3,19 @@
 
 .blog{
     &_entries{
-        padding-block: 6rem 7.5rem;
+        
+        padding: 7rem 0;
+
         @media (max-width: v.$television){
-            padding-block: 5rem 6.5rem;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
         }
+
         @media (max-width: v.$desktop){
-            padding-block: 4rem;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
         }
+        
         .grilla{
             @include m.grid(3, 40px 20px);
             @media (max-width: v.$desktop){

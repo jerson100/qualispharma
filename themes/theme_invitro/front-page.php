@@ -9,7 +9,8 @@ get_header();
 <main>
     <section class="hero relative">
         <?php if (have_rows('fondos')): ?>
-            <div class="splide wh-100" id="main">
+            <div class="splide splide-navigation-dott splide-navigation-dott--content splide-navigation-dott--verde wh-100"
+                id="main">
                 <div class="splide__track wh-100">
                     <ul class="splide__list wh-100">
                         <?php while (have_rows('fondos')):
@@ -101,7 +102,10 @@ get_header();
                         Todos nuestros productos cuentan con estudios de bioequivalencia.
                     </p>
                     <div class="center">
-                        <a href="#" class="button button-variant-contained-verde">Ver más</a>
+                        <a href="<?php
+                        $inicio_url = home_url();
+                        echo esc_url($inicio_url . "/nosotros") ?>" class="button button-variant-contained-verde">Ver
+                            más</a>
                     </div>
                 </div>
                 <div class="banner-bottom__image">
@@ -176,11 +180,106 @@ get_header();
 
     <?php get_template_part("/inc/main_objetives") ?>
 
-
     <?php get_template_part("/inc/partners") ?>
 
     <?php get_template_part('/inc/contacto'); ?>
 
+    <?php
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 3,
+    );
+
+    $similars = new WP_Query($args);
+    ?>
+    <?php if ($similars->have_posts()): ?>
+        <section class="articles">
+            <div class="contenedor">
+                <h2>Entérate más del mundo farmacéutico:</h2>
+                <ul class="articles__list">
+                    <?php while ($similars->have_posts()):
+                        $similars->the_post(); ?>
+                        <li class="articles__item">
+                            <div class="articles__bg">
+                                <?php
+                                $thumbID = get_post_thumbnail_id($post->ID);
+                                $imgDestacada = wp_get_attachment_image_src($thumbID, 'thumbnail');
+                                if (!empty($imgDestacada)) {
+                                    echo '<img src="' . $imgDestacada[0] . '" title="' . get_the_title() . '" alt="' . get_the_title() . '" class="w-100">';
+                                } else {
+                                    echo '';
+                                }
+                                ?>
+                                <div class="articles__title">
+                                    <p>
+                                        <?php echo get_the_title(); ?>
+                                    </p>
+                                    <a href="<?php the_permalink() ?>" title="<?php echo get_the_title(); ?>"
+                                        alt="<?php echo get_the_title(); ?>" class="button button-variant-contained-verde">Ver
+                                        más</a>
+                                </div>
+                            </div>
+                        </li>
+                    <?php endwhile; ?>
+                </ul>
+                <div class="articles__ver-mas">
+                    <a href="<?php
+                    $inicio_url = home_url();
+                    echo esc_url($inicio_url . "/blog") ?>" class="button button-variant-contained-verde">Ver más</a>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
+
+    <?php
+    get_header();
+
+    $args = array(
+        'post_type' => 'noticia',
+        'posts_per_page' => 3,
+    );
+
+    $noticias = new WP_Query($args);
+    ?>
+    <?php if ($similars->have_posts()): ?>
+        <section class="articles articles--bg-celeste">
+            <div class="contenedor">
+                <h2>Últimas noticias:</h2>
+                <ul class="articles__list">
+                    <?php while ($noticias->have_posts()):
+                        $noticias->the_post(); ?>
+                        <li class="articles__item">
+                            <div class="articles__bg">
+                                <?php
+                                $thumbID = get_post_thumbnail_id($post->ID);
+                                $imgDestacada = wp_get_attachment_image_src($thumbID, 'thumbnail');
+                                if (!empty($imgDestacada)) {
+                                    echo '<img src="' . $imgDestacada[0] . '" title="' . get_the_title() . '" alt="' . get_the_title() . '" class="w-100">';
+                                } else {
+                                    echo '';
+                                }
+                                ?>
+                                <div class="articles__title">
+                                    <p>
+                                        <?php echo get_the_title(); ?>
+                                    </p>
+                                    <a href="<?php the_permalink() ?>" title="<?php echo get_the_title(); ?>"
+                                        alt="<?php echo get_the_title(); ?>" class="button button-variant-contained-verde">Ver
+                                        más</a>
+                                </div>
+                            </div>
+                        </li>
+                    <?php endwhile; ?>
+                </ul>
+                <div class="articles__ver-mas">
+                    <a href="<?php
+                    $inicio_url = home_url();
+                    echo esc_url($inicio_url . "/noticias") ?>" class="button button-variant-contained-verde">Ver
+                        más</a>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
 </main>
 
 <?php //get_template_part('inc/section'); ?>

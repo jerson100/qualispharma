@@ -4,6 +4,10 @@
 .contacto{
     min-height: 100vh;
     padding: 5rem 0;
+    @media (max-width: v.$desktop){
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
     @include m.flex(center, 0);
     flex-direction: column;
     background: rgba($color: v.$celeste, $alpha: 0.2);
@@ -76,6 +80,10 @@
 .contactanos{
     background: v.$celeste;
     padding-block: 6rem;
+    @media (max-width: v.$desktop){
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
     min-height: 100vh;
     @include m.flex(center, 0);
     flex-direction: column;

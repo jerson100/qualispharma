@@ -2,7 +2,16 @@
 @use "base/variables" as v;
 
 .productos{
-    padding: 4rem 0 5.5rem;
+    // padding: 4rem 0 5.5rem;
+    padding: 7rem 0;
+    @media (max-width: v.$television){
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    @media (max-width: v.$desktop){
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
     &_grid{
         @include m.grid(3, 40px 20px);
         @media (max-width: v.$desktop){
@@ -10,6 +19,87 @@
         }
         @media (max-width: v.$tablet){
             @include m.grid(1, 40px 20px);
+        }
+    }
+    &-alert{
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+        &__content{
+            max-width: 700px;
+            margin-inline: auto;
+            h2{
+                text-align: center;
+                margin-bottom: 4rem;
+                color: #585858;
+            }
+        }
+        &__modal{
+            z-index: 13;
+            position: fixed;
+            left:  0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #8e8d8dab;
+            display: none;
+            justify-content: center;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            &.open{
+                display: flex;
+            }
+            &-content{
+                background-color: #fff;
+                max-width: 700px;
+                width: 100%;
+                padding: 5rem;
+                border-radius: 70px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: auto;
+                margin-bottom: auto;
+                @media (max-width: v.$television){
+                    padding: 3rem;
+                    max-width: 600px;
+                    border-radius: 60px;
+                }
+                @media (max-width: v.$desktop){
+                    padding: 2rem;
+                    max-width: 500px;
+                    border-radius: 50px;
+                }
+                img{
+                    margin-bottom: 2rem;
+                    max-width: 100%;
+                    max-width: 300px;
+                }
+                p{
+                    margin-bottom: 2rem;
+                    color: #585858;
+                    line-height: 1.5;
+                    text-align: center;
+                    font-family: "GorditaMedium";
+                }
+            }
+        }
+        &__buttons{
+            max-width: 60%;
+            margin-inline: auto;
+            display: flex;
+            justify-content: space-between;
+            @media (max-width: v.$tablet){
+                max-width: 80%;
+            }
+            button{
+                min-width: 100px;
+            }
+        }
+    }
+    &-main-container{
+        display: none;
+        &.active{
+            display: block;
         }
     }
 }

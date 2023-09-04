@@ -132,6 +132,9 @@ header{
     height: 100vh;
     background: rgba($color: v.$celeste, $alpha: .95);
     @include m.transition;
+    @media (max-width: v.$television){
+        width: min(100%, 400px);
+    }
     @media (max-width: v.$desktop){
         width: 100vw;
         right: -100vw;
@@ -171,6 +174,9 @@ header{
             @include m.contain(50px);
             color: v.$blanco;
             fill: v.$blanco;
+            @media (max-width: v.$television){
+                @include m.contain(30px);
+            }
         }
     }
     &_box{
@@ -183,7 +189,7 @@ header{
             color: v.$blanco;
             font-size: 1.3rem;
             @media (max-width: v.$television){
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             @media (max-width: v.$desktop){
                 font-size: .9rem

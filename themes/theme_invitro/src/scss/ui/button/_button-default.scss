@@ -23,6 +23,8 @@
     border-color: $bg-color;
     @media (max-width: v.$television){
         font-size: .9rem;
+        padding: .6rem 1rem;
+        min-width: 160px;
     }
     @media (max-width: v.$desktop){
         font-size: .8rem;
@@ -77,6 +79,13 @@
             }
         }
         &-outlined{
+            &-celeste{
+                &:hover{
+                    background-color: transparent;
+                    color: v.$celeste;
+                    border-color: v.$celeste;
+                }
+            }
         }
     }
 }

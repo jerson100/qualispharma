@@ -3,8 +3,19 @@
 
 
 .why-line-we-handle{
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    
+    padding: 7rem 0;
+
+    @media (max-width: v.$television){
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    @media (max-width: v.$desktop){
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
     h2{
         color: v.$celeste;
         text-align: center;   
@@ -52,6 +63,7 @@
         border-radius: 46px;
         border: solid 1px #707070;
         height: 100%;
+        overflow: hidden;
         transform: scaleY(1.2);
         position: relative;
         min-height: 400px;
@@ -87,8 +99,19 @@
 }
 
 .beneficts-qualivida{
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    
+    padding: 7rem 0;
+
+    @media (max-width: v.$television){
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    @media (max-width: v.$desktop){
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
     background-color: rgba(v.$celeste, 0.2);
     h2{
         color: v.$verde;

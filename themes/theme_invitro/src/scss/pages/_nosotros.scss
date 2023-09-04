@@ -3,7 +3,15 @@
 
 
 .somos{
-    padding: 5.5rem 0;
+    padding: 7rem 0;
+    @media (max-width: v.$television){
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    @media (max-width: v.$desktop){
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
     .contenido{
         width: min(100%, 980px);
         @media (max-width: v.$television){
@@ -18,6 +26,12 @@
         color: v.$celeste;
         font-family: v.$bold;
         margin-bottom: 50px;
+        @media (max-width: v.$television){
+            margin-bottom: 35px;
+        }
+        @media (max-width: v.$desktop){
+            margin-bottom: 25px;
+        }
     }
     p{
         color: v.$negro2;
@@ -29,7 +43,15 @@
 
 .informacion{
     background-color: rgba(v.$azul, 0.2);
-    padding: 5.5rem 0;
+    padding: 7rem 0;
+    @media (max-width: v.$television){
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    @media (max-width: v.$desktop){
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
     &__content{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -69,7 +91,7 @@
             display: grid;
             margin-left: auto;
             margin-right: auto;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 2rem;
             @media (max-width: 1500px){
                 column-gap: 0;
@@ -103,6 +125,10 @@
 
 .capacidades{
     padding: 5.5rem 0;
+    @media (max-width: v.$desktop){
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
     h2 {
         color: v.$celeste;
         margin-bottom: 3rem;

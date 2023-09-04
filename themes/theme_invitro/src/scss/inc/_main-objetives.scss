@@ -3,9 +3,18 @@
 
 .main-objetives{
 
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    
+    padding: 7rem 0;
+
+    @media (max-width: v.$television){
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    @media (max-width: v.$desktop){
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
     h2 {
         color: v.$celeste;
         text-align: center;
@@ -33,11 +42,13 @@
         border-radius: 57px;
         cursor: pointer;
         background-image: linear-gradient(to bottom, #ADE44C, #62BDBE);
-        @media (max-width: v.$desktop){
-            max-width: 350px;
-        }
         @media (max-width: v.$television){
             height: 240px;
+        }
+        @media (max-width: v.$desktop){
+            max-width: 350px;
+            height: 220px;
+            padding: 2rem;
         }
         height: 300px;
         &:hover{
@@ -68,6 +79,9 @@
                 max-width: 100px;
                 transform: scale(1.6);
                 margin-bottom: 1rem;
+            }
+            @media (max-width: v.$desktop){
+                transform: scale(1.55);
             }
         }
         p{

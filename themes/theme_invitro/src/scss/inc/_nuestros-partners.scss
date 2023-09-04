@@ -2,12 +2,30 @@
 @use "base/variables" as v;
 
 .partners{
-    padding-top: 4rem;
-    padding-bottom: 5rem;
+    // padding-top: 4rem;
+    // padding-bottom: 5rem;
+    
+    padding: 7rem 0;
+
+    @media (max-width: v.$television){
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    @media (max-width: v.$desktop){
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
     &__content{
         h2{
-            margin-bottom: 3rem;
+            margin-bottom: 5rem;
             font-family: "GorditaMedium";
+            @media (max-width: v.$television) {
+                margin-bottom: 4rem;
+            }
+            @media (max-width: v.$desktop) {
+                margin-bottom: 3rem;
+            }
             // font-size: 2.2rem;
             // @media (max-width: v.$television){
             //     font-size: 1.8rem;

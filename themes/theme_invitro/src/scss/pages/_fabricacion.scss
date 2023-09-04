@@ -26,16 +26,29 @@
 }
 
 .nuestras-plantas{
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-    @media (max-width: v.$desktop){
+    
+    padding: 7rem 0;
+
+    @media (max-width: v.$television){
         padding-top: 5rem;
         padding-bottom: 5rem;
     }
+    
+    @media (max-width: v.$desktop){
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
     &__title{
         color: v.$celeste;
         text-align: center;
         margin-bottom: 6rem;
+        @media (max-width: v.$television){
+            margin-bottom: 4rem;
+        }
+        @media (max-width: v.$desktop){
+            margin-bottom: 3rem;
+        }
     }
     &__item{
         display: grid;

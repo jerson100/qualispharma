@@ -47,6 +47,11 @@
       arrows: false,
       gap: "2rem",
       pagination: true,
+      breakpoints: {
+        1024: {
+          perPage: 1,
+        },
+      },
     }).mount();
   }
 

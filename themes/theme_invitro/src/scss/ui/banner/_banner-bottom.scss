@@ -2,8 +2,44 @@
 @use "base/variables" as v;
 
 .banner-bottom{
-    padding-top: 3rem;
-    padding-bottom: 5rem;
+    padding-top: 5rem;
+    padding-bottom: 7rem;
+    &__title{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5rem;
+        h2{
+            text-align: center;
+            background-color: v.$celeste;
+            color: #fff;
+            padding: .8rem 4rem;
+            border-radius: 50px;
+        }
+        @media (max-width: v.$desktop){
+            margin-bottom: 2rem;
+        }
+    }
+    &--reverse{
+       .banner-bottom{
+        &__image{
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            @media (max-width: v.$desktop){
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+        }
+        &__bg-text{
+            grid-column: 2 / 3;
+            transform: translateX(-20%);
+            @media (max-width: v.$desktop){
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                transform: translateX(0%);
+            }
+        }
+       }
+    }
     &__content {
         display: grid;
         grid-template-columns: 55% 1fr;

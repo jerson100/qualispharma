@@ -22,14 +22,19 @@
     &_info{
         width: 32%;
         p{
+            display: -webkit-box;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
             &:nth-child(1){
                 color: v.$celeste;
                 font-family: v.$bold;
+                -webkit-line-clamp: 2;
             }
             &:nth-child(2){
                 margin-top: 8px;
                 color: v.$negro;
                 font-family: v.$medium;
+                -webkit-line-clamp: 3;
             }
         }
         a{

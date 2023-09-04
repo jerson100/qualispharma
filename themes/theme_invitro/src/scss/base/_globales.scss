@@ -124,3 +124,23 @@ main, section, header, footer{
 .bg-celeste{
    background-color: rgba(v.$celeste, 0.2);
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#ADE44C, #62BDBE); 
+    border-radius: 10px; 
+    border: 2px solid #8BCB84;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #B6D7B1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(#62BDBE, #ADE44C);
+}
+

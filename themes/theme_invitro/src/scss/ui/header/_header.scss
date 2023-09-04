@@ -10,8 +10,11 @@ header{
     z-index: 10;
     background: v.$blanco;
     @include m.flex(center, 0);
-    @media (max-width: v.$desktop){
+    @media (max-width: v.$television){
         height: 80px;
+    }
+    @media (max-width: v.$desktop){
+        height: 64px;
     }
     ul{
         list-style: none;
@@ -24,8 +27,11 @@ header{
     }
     .logo{
         max-width: 300px;
-        @media (max-width: v.$desktop){
+        @media (max-width: v.$television){
             max-width: 200px;
+        }
+        @media (max-width: v.$desktop){
+            max-width: 120px;
         }
         img{
             width: 100%;
@@ -33,10 +39,12 @@ header{
     }
     .navbar{
         max-width: calc(100% - 400px);
+        @media (max-width: 1200px){
+            max-width: calc(100% - 300px);
+        }
         flex-wrap: nowrap;
         position: relative;
         @include m.flex(flex-end, 6%);
-        
         li{
             a{
                 color: v.$verde;
@@ -116,6 +124,7 @@ header{
 
 .aside{
     position: fixed;
+    overflow: auto;
     top: 0;
     right: -600px;
     z-index: 12;
@@ -123,6 +132,10 @@ header{
     height: 100vh;
     background: rgba($color: v.$celeste, $alpha: .95);
     @include m.transition;
+    @media (max-width: v.$desktop){
+        width: 100vw;
+        right: -100vw;
+    }
     &__top{
         display: none;
         margin-bottom: 1rem;

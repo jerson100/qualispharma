@@ -17,7 +17,7 @@ h1{
         line-height: 1.2em;
     }
     @media (max-width: v.$desktop){
-        font-size: 2.2em;
+        font-size: 2.1em;
         line-height: 1.2em;
     }
 }
@@ -30,7 +30,7 @@ h2, .h2{
         line-height: 1.2em;
     }
     @media (max-width: v.$desktop){
-        font-size: 1.8em;
+        font-size: 1.6em;
         line-height: 1.2em;
     }
     &.up{
@@ -45,7 +45,7 @@ h2, .h2{
             line-height: 1.2em;
         }
         @media (max-width: v.$desktop){
-            font-size: 1.5em;
+            font-size: 1.4em;
             line-height: 1.2em;
         }
     }

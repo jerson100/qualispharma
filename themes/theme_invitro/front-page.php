@@ -90,6 +90,48 @@ get_header();
         </section>
     <?php endif; ?>
 
+    <section class="banner-bottom banner-bottom-nosotros">
+        <div class="contenedor">
+            <div class="banner-bottom__content">
+                <div class="banner-bottom__bg-text">
+                    <h2>Nosotros:</h2>
+                    <p>
+                        Somos una empresa farmacéutica con altos estándares de calidad, ofrecemos productos innovadores,
+                        productos de alta calidad que provienen de plantas certificadas por países de alta vigilancia.
+                        Todos nuestros productos cuentan con estudios de bioequivalencia.
+                    </p>
+                    <div class="center">
+                        <a href="#" class="button button-variant-contained-verde">Ver más</a>
+                    </div>
+                </div>
+                <div class="banner-bottom__image">
+                    <img src="<?php echo IMG ?>/inicio/enfermera.jpg" class="shadow-img" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="banner-bottom banner-bottom--reverse">
+        <div class="contenedor">
+            <div class="banner-bottom__title">
+                <h2>Qualivida</h2>
+            </div>
+            <div class="banner-bottom__content">
+                <div class="banner-bottom__bg-text">
+                    <p>
+                        El programa Qualivida ha sido diseñado para apoyar a los pacientes a obtener los medicamentos
+                        recetados por el médico a un precio asequible, mejorar la adherencia al tratamiento y mejorar la
+                        calidad de vida de los pacientes.
+                    </p>
+                </div>
+                <div class="banner-bottom__image">
+                    <img src="<?php echo IMG ?>/qualivida/shot-of-a-young-pharmacist-helping-an-elderly-cust-2022-12-12-19-38-43-utc.jpg"
+                        class="shadow-img" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- <section class="partners">
         <div class="contenedor">
             <h2 class="down">Nuestros Partners</h2>
@@ -137,7 +179,7 @@ get_header();
 
     <?php get_template_part("/inc/partners") ?>
 
-    <?php get_template_part('inc/contacto'); ?>
+    <?php get_template_part('/inc/contacto'); ?>
 
 </main>
 

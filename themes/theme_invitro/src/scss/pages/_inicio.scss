@@ -2,7 +2,14 @@
 @use "base/variables" as v;
 
 .hero{
-    height: calc(100vh - 116px);
+    min-height: calc(100vh - 116px);
+    @media (max-width: v.$television){
+        min-height: calc(100vh - 80px);
+    }
+    @media (max-width: v.$desktop){
+        padding: 1.5rem 0;
+        min-height: calc(100vh - 64px);
+    }
     @include m.flex(center, 0);
     flex-direction: column;
     .splide{
@@ -20,6 +27,9 @@
     .contenido{
         width: min(100%, 700px);
         margin-top: -30px;
+        @media (max-width: v.$desktop){
+            margin-top: 0;
+        }
         p, a, h1{
             color: v.$blanco;
         }
@@ -29,6 +39,12 @@
             line-height: 1.5em;
             width: min(100%, 460px);
             margin: 40px 0 35px;
+            @media (max-width: v.$television){
+                font-size: 1.4em;
+            }
+            @media (max-width: v.$desktop){
+                font-size: 1.1em;
+            }
         }
         a{
             @include m.boton(240px, 50px, v.$verde, v.$blanco);
@@ -44,7 +60,13 @@
 }
 
 .our_products{
-    padding: 6.5rem 0;
+    padding: 6.5rem 0 3rem 0;
+    @media (max-width: v.$television){
+        padding: 4rem 0 1rem 0;
+    }
+    @media (max-width: v.$desktop){
+        padding: 4rem 0 3rem 0;
+    }
     .splide{
         padding: 4px;
     }
@@ -90,5 +112,33 @@
     }
     .row{
         column-gap: 34px;
+    }
+}
+
+.banner-bottom-nosotros{
+    background-color: rgba(v.$celeste,0.2);
+    h2{
+        margin-bottom: 1rem;
+        color: v.$celeste;
+        font-size: 1.8rem;
+        @media (max-width: v.$television){
+            font-size: 1.4rem;
+        }
+        @media (max-width: v.$desktop){
+            font-size: 1.1rem;
+        }
+    }
+    p{
+        margin-bottom: 1rem;;
+    }
+    .banner-bottom__bg-text{
+        @media (max-width: v.$desktop){
+            padding: 2rem 1.5rem;
+        }
+    }
+    .center{
+        margin-top: 3rem;
+        display: flex;
+        justify-content: center;
     }
 }

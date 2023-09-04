@@ -463,6 +463,24 @@ main, section, header, footer {
   background-color: rgba(83, 179, 211, 0.2);
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ADE44C, #62BDBE);
+  border-radius: 10px;
+  border: 2px solid #8BCB84;
+}
+
+::-webkit-scrollbar-track {
+  background: #B6D7B1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#62BDBE, #ADE44C);
+}
+
 a {
   font-size: 1.1rem;
 }
@@ -489,7 +507,7 @@ h1 {
 }
 @media (max-width: 1024px) {
   h1 {
-    font-size: 2.2em;
+    font-size: 2.1em;
     line-height: 1.2em;
   }
 }
@@ -507,7 +525,7 @@ h2, .h2 {
 }
 @media (max-width: 1024px) {
   h2, .h2 {
-    font-size: 1.8em;
+    font-size: 1.6em;
     line-height: 1.2em;
   }
 }
@@ -527,7 +545,7 @@ h2.down, .h2.down {
 }
 @media (max-width: 1024px) {
   h2.down, .h2.down {
-    font-size: 1.5em;
+    font-size: 1.4em;
     line-height: 1.2em;
   }
 }
@@ -564,13 +582,24 @@ p, .text {
 }
 
 .hero {
-  height: calc(100vh - 116px);
+  min-height: calc(100vh - 116px);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 0;
   flex-direction: column;
+}
+@media (max-width: 1462px) {
+  .hero {
+    min-height: calc(100vh - 80px);
+  }
+}
+@media (max-width: 1024px) {
+  .hero {
+    padding: 1.5rem 0;
+    min-height: calc(100vh - 64px);
+  }
 }
 .hero .splide {
   position: absolute;
@@ -590,6 +619,11 @@ p, .text {
   width: min(100%, 700px);
   margin-top: -30px;
 }
+@media (max-width: 1024px) {
+  .hero .contenido {
+    margin-top: 0;
+  }
+}
 .hero .contenido p, .hero .contenido a, .hero .contenido h1 {
   color: #ffffff;
 }
@@ -599,6 +633,16 @@ p, .text {
   line-height: 1.5em;
   width: min(100%, 460px);
   margin: 40px 0 35px;
+}
+@media (max-width: 1462px) {
+  .hero .contenido p {
+    font-size: 1.4em;
+  }
+}
+@media (max-width: 1024px) {
+  .hero .contenido p {
+    font-size: 1.1em;
+  }
 }
 .hero .contenido a {
   border: 2px solid #319E32;
@@ -641,7 +685,17 @@ p, .text {
 }
 
 .our_products {
-  padding: 6.5rem 0;
+  padding: 6.5rem 0 3rem 0;
+}
+@media (max-width: 1462px) {
+  .our_products {
+    padding: 4rem 0 1rem 0;
+  }
+}
+@media (max-width: 1024px) {
+  .our_products {
+    padding: 4rem 0 3rem 0;
+  }
 }
 .our_products .splide {
   padding: 4px;
@@ -691,6 +745,38 @@ p, .text {
 .objetivos .row {
   -moz-column-gap: 34px;
        column-gap: 34px;
+}
+
+.banner-bottom-nosotros {
+  background-color: rgba(83, 179, 211, 0.2);
+}
+.banner-bottom-nosotros h2 {
+  margin-bottom: 1rem;
+  color: #53B3D3;
+  font-size: 1.8rem;
+}
+@media (max-width: 1462px) {
+  .banner-bottom-nosotros h2 {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 1024px) {
+  .banner-bottom-nosotros h2 {
+    font-size: 1.1rem;
+  }
+}
+.banner-bottom-nosotros p {
+  margin-bottom: 1rem;
+}
+@media (max-width: 1024px) {
+  .banner-bottom-nosotros .banner-bottom__bg-text {
+    padding: 2rem 1.5rem;
+  }
+}
+.banner-bottom-nosotros .center {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
 }
 
 .somos {
@@ -1653,9 +1739,14 @@ header {
   justify-content: center;
   gap: 0;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1462px) {
   header {
     height: 80px;
+  }
+}
+@media (max-width: 1024px) {
+  header {
+    height: 64px;
   }
 }
 header ul {
@@ -1672,9 +1763,14 @@ header .row > div {
 header .logo {
   max-width: 300px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1462px) {
   header .logo {
     max-width: 200px;
+  }
+}
+@media (max-width: 1024px) {
+  header .logo {
+    max-width: 120px;
   }
 }
 header .logo img {
@@ -1689,6 +1785,11 @@ header .navbar {
   align-items: center;
   justify-content: flex-end;
   gap: 6%;
+}
+@media (max-width: 1200px) {
+  header .navbar {
+    max-width: calc(100% - 300px);
+  }
 }
 header .navbar li a {
   color: #319E32;
@@ -1775,6 +1876,7 @@ header .burger button:hover div:nth-child(2) {
 
 .aside {
   position: fixed;
+  overflow: auto;
   top: 0;
   right: -600px;
   z-index: 12;
@@ -1782,6 +1884,12 @@ header .burger button:hover div:nth-child(2) {
   height: 100vh;
   background: rgba(83, 179, 211, 0.95);
   transition: all 0.25s ease;
+}
+@media (max-width: 1024px) {
+  .aside {
+    width: 100vw;
+    right: -100vw;
+  }
 }
 .aside__top {
   display: none;
@@ -1916,8 +2024,46 @@ body:has(aside.active) .aside_bg {
 }
 
 .banner-bottom {
-  padding-top: 3rem;
-  padding-bottom: 5rem;
+  padding-top: 5rem;
+  padding-bottom: 7rem;
+}
+.banner-bottom__title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+.banner-bottom__title h2 {
+  text-align: center;
+  background-color: #53B3D3;
+  color: #fff;
+  padding: 0.8rem 4rem;
+  border-radius: 50px;
+}
+@media (max-width: 1024px) {
+  .banner-bottom__title {
+    margin-bottom: 2rem;
+  }
+}
+.banner-bottom--reverse .banner-bottom__image {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+@media (max-width: 1024px) {
+  .banner-bottom--reverse .banner-bottom__image {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
+.banner-bottom--reverse .banner-bottom__bg-text {
+  grid-column: 2/3;
+  transform: translateX(-20%);
+}
+@media (max-width: 1024px) {
+  .banner-bottom--reverse .banner-bottom__bg-text {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    transform: translateX(0%);
+  }
 }
 .banner-bottom__content {
   display: grid;
@@ -1995,14 +2141,21 @@ body:has(aside.active) .aside_bg {
 .card_product_info {
   width: 32%;
 }
+.card_product_info p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .card_product_info p:nth-child(1) {
   color: #53B3D3;
   font-family: "GorditaBold";
+  -webkit-line-clamp: 2;
 }
 .card_product_info p:nth-child(2) {
   margin-top: 8px;
   color: #000000;
   font-family: "GorditaMedium";
+  -webkit-line-clamp: 3;
 }
 .card_product_info a {
   border: 2px solid #319E32;
@@ -2960,12 +3113,22 @@ footer .social-networks__items svg {
   gap: 1.5rem;
   list-style: none;
 }
+@media (max-width: 1024px) {
+  .main-objetives__list {
+    place-items: center;
+  }
+}
 .main-objetives__item {
   padding: 2.4rem;
   border-radius: 57px;
   cursor: pointer;
   background-image: linear-gradient(to bottom, #ADE44C, #62BDBE);
   height: 300px;
+}
+@media (max-width: 1024px) {
+  .main-objetives__item {
+    max-width: 350px;
+  }
 }
 @media (max-width: 1462px) {
   .main-objetives__item {

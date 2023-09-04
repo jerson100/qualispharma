@@ -39,12 +39,17 @@
     window.addEventListener('DOMContentLoaded', function () {
         var header = document.querySelector('header');
         const mediaQuery = window.matchMedia('(min-width: 1024px)');//desktop
-        console.log(mediaQuery)
+        const mediaQuery2 = window.matchMedia('(min-width: 1462px)');//tv
         var body = document.querySelector('body');
+        mediaQuery2.addEventListener("change", () => {
+            if (header) {
+                var headerHeight = header.offsetHeight;
+                body.style.paddingTop = headerHeight + 'px';
+            }
+        });
         mediaQuery.addEventListener("change", () => {
             if (header) {
                 var headerHeight = header.offsetHeight;
-                console.log("change", headerHeight)
                 body.style.paddingTop = headerHeight + 'px';
             }
         });

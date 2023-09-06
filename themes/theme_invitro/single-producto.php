@@ -115,7 +115,7 @@ $productId = get_the_ID();
                             class="button button-variant-contained-verde">Cotizar ahora</a>
                         <p>Disponible en:</p>
                         <img src="<?php echo IMG ?>/producto/inkafarma.jpg" alt="Logo de Inkafarma"
-                            title="Logo de Inkafarma">
+                            title="Logo de Inkafarma" width="306" height="106">
                     </div>
                 </div>
             </div>
@@ -144,11 +144,13 @@ $productId = get_the_ID();
                                     $thumbID = get_post_thumbnail_id($post->ID);
                                     $imgDestacada = wp_get_attachment_image_src($thumbID, 'thumbnail');
                                     if (!empty($imgDestacada)):
+                                        // Obtener el ancho y alto de la imagen
+                                        list($width, $height) = getimagesize($imgDestacada[0]);
                                         ?>
                                         <li class="splide__slide">
                                             <div class="product">
                                                 <div class="product_image">
-                                                    <?php echo '<img src="' . $imgDestacada[0] . '" title="' . get_the_title() . '" alt="' . get_the_title() . '">'; ?>
+                                                    <?php echo '<img src="' . $imgDestacada[0] . '" title="' . get_the_title() . '" alt="' . get_the_title() . '" width="' . $width . '" height="' . $height . '">'; ?>
                                                 </div>
                                                 <div class="product_info w-100">
                                                     <div class="product_info_content">

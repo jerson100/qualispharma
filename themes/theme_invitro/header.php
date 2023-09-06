@@ -29,7 +29,7 @@
                 <a class="logo" href="<?php echo esc_url(home_url('/')) ?>" title="<?php echo get_bloginfo('name'); ?>"
                     alt="<?php echo get_bloginfo('name'); ?>">
                     <img src="<?php echo IMG; ?>/logo.svg" title="<?php echo get_bloginfo('name'); ?>"
-                        alt="<?php echo get_bloginfo('name'); ?>">
+                        alt="<?php echo get_bloginfo('name'); ?>" width="365" height="78">
                 </a>
                 <div class="navbar">
                     <?php wp_nav_menu(array('theme_location' => 'header-menu', 'container_class' => 'navbar_links', 'menu_class' => 'ul_menu')); ?>

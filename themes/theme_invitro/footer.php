@@ -3,7 +3,7 @@
         <div class="grilla">
             <div class="nav_logo">
                 <img src="<?php echo IMG; ?>/logo-white.svg" class="logo" title="<?php echo get_bloginfo('name'); ?>"
-                    alt="<?php echo get_bloginfo('name'); ?>">
+                    alt="<?php echo get_bloginfo('name'); ?>" width="365" height="78">
             </div>
             <div class="nav_menu">
                 <?php wp_nav_menu(array('theme_location' => 'header-menu', 'container_class' => 'navbar_links', 'menu_class' => 'ul_menu')); ?>

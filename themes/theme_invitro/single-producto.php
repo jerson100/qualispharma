@@ -35,7 +35,7 @@ $productId = get_the_ID();
                         if ($image_field):
                             ?>
                             <img src="<?php echo $image_field["url"] ?>" alt="<?php echo $image_field["alt"] ?>"
-                                title="<?php echo $image_field["alt"] ?>" width="<?php echo $image_field["width"] ?>"
+                                title="<?php echo $image_field["title"] ?>" width="<?php echo $image_field["width"] ?>"
                                 height="<?php echo $image_field["height"]
                                     ?>" />
                         <?php endif; ?>
@@ -111,7 +111,7 @@ $productId = get_the_ID();
                 </div>
                 <div class="single-product__body-right">
                     <div class="single-product__body-cotizar">
-                        <a href="<?php echo esc_url(home_url() . "/contacto") ?>"
+                        <a title="Cotizar ahora" href="<?php echo esc_url(home_url() . "/contacto") ?>"
                             class="button button-variant-contained-verde">Cotizar ahora</a>
                         <p>Disponible en:</p>
                         <img src="<?php echo IMG ?>/producto/inkafarma.jpg" alt="Logo de Inkafarma"
@@ -158,7 +158,8 @@ $productId = get_the_ID();
                                                         <p><b>Vildagliptina 50 mg + Metformina 1000 mg</b>Caja x 30 tabletas</p>
                                                     </div>
                                                     <div class="product_info_link">
-                                                        <a href="<?php the_permalink(); ?>">Ver más</a>
+                                                        <a href="<?php the_permalink(); ?>"
+                                                            title=" <?php echo get_the_title(); ?>">Ver más</a>
                                                     </div>
                                                 </div>
                                             </div>

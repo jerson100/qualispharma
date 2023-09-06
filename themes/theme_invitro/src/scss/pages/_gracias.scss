@@ -17,6 +17,11 @@
         justify-content: center;
         align-items: center;
         gap: 3rem;
+        svg{
+            path{
+                fill: v.$blanco !important;
+            }
+        }
         @media (max-width: v.$television){
             gap: 2rem;
         }

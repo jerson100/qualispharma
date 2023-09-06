@@ -14,23 +14,25 @@
             </div>
         </div>
     </div>
-    <div class="contenedor">
-        <div class="social-networks">
-            <div class="social-networks__items">
-                <p>Síguenos en:</p>
-                <a href="#">
-                    <svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" width="45.286"
-                        height="45.286" viewBox="0 0 45.286 45.286">
-                        <g id="Capa_1" data-name="Capa 1">
-                            <path id="Trazado_8004" data-name="Trazado 8004"
-                                d="M41.169,0H4.117A4.117,4.117,0,0,0,0,4.117V41.169a4.117,4.117,0,0,0,4.117,4.117H41.169a4.117,4.117,0,0,0,4.117-4.117V4.117A4.117,4.117,0,0,0,41.169,0ZM14.409,37.052H8.234V17.517h6.175ZM11.219,14.718a3.541,3.541,0,1,1,3.541-3.541,3.541,3.541,0,0,1-3.541,3.541ZM37.052,37.052H31v-9.51c0-2.264,0-5.167-3.17-5.167s-3.643,2.47-3.643,5v9.675H18.114V17.517H23.94v2.676h0a6.4,6.4,0,0,1,5.743-3.17c6.175,0,7.287,4.117,7.287,9.3Z"
-                                fill="#fff" />
-                        </g>
-                    </svg>
-                </a>
+    <?php if (!empty(get_option('linkedin'))): ?>
+        <div class="contenedor">
+            <div class="social-networks">
+                <div class="social-networks__items">
+                    <p>Síguenos en:</p>
+                    <a href="<?php echo get_option('linkedin') ?>" title="linkedin">
+                        <svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" width="45.286"
+                            height="45.286" viewBox="0 0 45.286 45.286">
+                            <g id="Capa_1" data-name="Capa 1">
+                                <path id="Trazado_8004" data-name="Trazado 8004"
+                                    d="M41.169,0H4.117A4.117,4.117,0,0,0,0,4.117V41.169a4.117,4.117,0,0,0,4.117,4.117H41.169a4.117,4.117,0,0,0,4.117-4.117V4.117A4.117,4.117,0,0,0,41.169,0ZM14.409,37.052H8.234V17.517h6.175ZM11.219,14.718a3.541,3.541,0,1,1,3.541-3.541,3.541,3.541,0,0,1-3.541,3.541ZM37.052,37.052H31v-9.51c0-2.264,0-5.167-3.17-5.167s-3.643,2.47-3.643,5v9.675H18.114V17.517H23.94v2.676h0a6.4,6.4,0,0,1,5.743-3.17c6.175,0,7.287,4.117,7.287,9.3Z"
+                                    fill="#fff" />
+                            </g>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
+    <?php endif; ?>
 </footer>
 
 <?php wp_footer(); ?>

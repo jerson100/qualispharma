@@ -19,117 +19,78 @@ get_header();
         <div class="contenedor">
             <div class="banner-bottom__content">
                 <div class="banner-bottom__bg-text">
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-                        mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
-                        quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
-                        rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
-                        Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
-                        tellus.</p>
+                    <p>
+                        <?php echo get_field("fabricacion_labor_description") ?>
+                    </p>
                 </div>
                 <div class="banner-bottom__image">
-                    <img src="<?php echo IMG ?>/fabricacion/the-coronavirus-or-covid-vaccine-researched-by-pha-2021-12-09-22-08-34-utc.jpg"
-                        alt="" class="shadow-img">
+                    <?php
+                    $img = get_field("fabricacion_labor_image");
+                    if (!empty($img)):
+                        ?>
+                        <img src="<?php echo $img["url"] ?>" alt="<?php echo $img["alt"] ?>"
+                            title="<?php echo $img["title"] ?>" width="<?php echo $img["width"] ?>"
+                            height="<?php echo $img["height"] ?>" loading="lazy" class="shadow-img">
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
     </div>
-    <div class="banner-message">
-        <div class="contenedor">
-            <p class="banner-message__text">Tu salud es nuestra prioridad, por eso conservamos la más alta calidad para
-                todos nuestros productos.
-            </p>
+    <?php if (!empty(get_field("fabricacion_message"))): ?>
+        <div class="banner-message">
+            <div class="contenedor">
+                <p class="banner-message__text">
+                    <?php echo get_field("fabricacion_message") ?>
+                </p>
+            </div>
         </div>
-    </div>
+    <?php endif; ?>
     <div class="nuestras-plantas">
         <div class="contenedor">
             <div class="nuestras-plantas__content">
-                <h2 class="nuestras-plantas__title">Nuestras Plantas</h2>
-                <section class="splide nuestras-plantas__splide splide-navigation-dott" aria-label="Nuestras plantas">
-                    <div class="splide__track">
-                        <ul class="splide__list nuestras-plantas__list">
-                            <li class="splide__slide nuestras-plantas__item">
-                                <div class="nuestras-plantas__left">
-                                    <img src="<?php echo IMG ?>/fabricacion/interior-of-a-lab-in-a-pharmacy-2022-12-16-22-20-16-utc.jpg"
-                                        class="shadow-img" alt="">
-                                </div>
-                                <div class="nuestras-plantas__right">
-                                    <div class="nuestras-plantas__right-top">
-                                        <h3>Vadodara, Gujarat, INDIA</h3>
-                                        <span>EU GMP</span>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-                                        eget
-                                        dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                                        montes,
-                                        nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-                                        pretium
-                                        quis,
-                                        sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
-                                        nec,
-                                        vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
-                                        justo.
-                                        Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
-                                        Vivamus
-                                        elementum semper nisi. Aenean vulputate eleifend tellus.</p>
-                                </div>
-                            </li>
-                            <li class="splide__slide nuestras-plantas__item">
-                                <div class="nuestras-plantas__left">
-                                    <img src="<?php echo IMG ?>/fabricacion/interior-of-a-lab-in-a-pharmacy-2022-12-16-22-20-16-utc.jpg"
-                                        class="shadow-img" alt="">
-                                </div>
-                                <div class="nuestras-plantas__right">
-                                    <div class="nuestras-plantas__right-top">
-                                        <h3>Vadodara, Gujarat, INDIA</h3>
-                                        <span>EU GMP</span>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-                                        eget
-                                        dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                                        montes,
-                                        nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-                                        pretium
-                                        quis,
-                                        sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
-                                        nec,
-                                        vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
-                                        justo.
-                                        Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
-                                        Vivamus
-                                        elementum semper nisi. Aenean vulputate eleifend tellus.</p>
-                                </div>
-                            </li>
-                            <li class="splide__slide nuestras-plantas__item">
-                                <div class="nuestras-plantas__left">
-                                    <img src="<?php echo IMG ?>/fabricacion/interior-of-a-lab-in-a-pharmacy-2022-12-16-22-20-16-utc.jpg"
-                                        class="shadow-img" alt="">
-                                </div>
-                                <div class="nuestras-plantas__right">
-                                    <div class="nuestras-plantas__right-top">
-                                        <h3>Vadodara, Gujarat, INDIA</h3>
-                                        <span>EU GMP</span>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-                                        eget
-                                        dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                                        montes,
-                                        nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-                                        pretium
-                                        quis,
-                                        sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
-                                        nec,
-                                        vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
-                                        justo.
-                                        Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
-                                        Vivamus
-                                        elementum semper nisi. Aenean vulputate eleifend tellus.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
+                <?php if (!empty(get_field("fabricacion_plantas_title"))): ?>
+                    <h2 class="nuestras-plantas__title">
+                        <?php echo get_field("fabricacion_plantas_title") ?>
+                    </h2>
+                <?php endif; ?>
+                <?php
+                if (have_rows("fabricacion_labor_list_plantas")):
+                    ?>
+                    <section class="splide nuestras-plantas__splide splide-navigation-dott" aria-label="Nuestras plantas">
+                        <div class="splide__track">
+                            <ul class="splide__list nuestras-plantas__list">
+                                <?php while (have_rows("fabricacion_labor_list_plantas")):
+                                    the_row();
+                                    ?>
+                                    <li class="splide__slide nuestras-plantas__item">
+                                        <div class="nuestras-plantas__left">
+                                            <?php
+                                            $img = get_sub_field("image");
+                                            ?>
+                                            <img src="<?php echo $img["url"] ?>" alt="<?php echo $img["alt"] ?>"
+                                                title="<?php echo $img["title"] ?>" width="<?php echo $img["width"] ?>"
+                                                height="<?php echo $img["height"] ?>" loading="lazy
+                                                class=" shadow-img">
+                                        </div>
+                                        <div class="nuestras-plantas__right">
+                                            <div class="nuestras-plantas__right-top">
+                                                <h3>
+                                                    <?php echo get_sub_field("title") ?>
+                                                </h3>
+                                                <span>
+                                                    <?php echo get_sub_field("subtitle") ?>
+                                                </span>
+                                            </div>
+                                            <p>
+                                                <?php echo get_sub_field("description") ?>
+                                            </p>
+                                        </div>
+                                    </li>
+                                <?php endwhile; ?>
+                            </ul>
+                        </div>
+                    </section>
+                <?php endif; ?>
             </div>
         </div>
     </div>

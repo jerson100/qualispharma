@@ -1440,12 +1440,6 @@ p, .text {
   overflow: hidden;
   transform: scaleY(1.2);
   position: relative;
-  min-height: 400px;
-}
-@media (max-width: 1462px) {
-  .why-line-we-handle__img-container {
-    min-height: 250px;
-  }
 }
 .why-line-we-handle__img-container img {
   position: absolute;
@@ -1797,6 +1791,9 @@ p, .text {
   justify-content: center;
   align-items: center;
   gap: 3rem;
+}
+.banner-gracias__content svg path {
+  fill: #ffffff !important;
 }
 @media (max-width: 1462px) {
   .banner-gracias__content {

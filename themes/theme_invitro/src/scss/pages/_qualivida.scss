@@ -66,9 +66,9 @@
         overflow: hidden;
         transform: scaleY(1.2);
         position: relative;
-        min-height: 400px;
+        // min-height: 400px;
         @media (max-width: v.$television) {
-            min-height: 250px;
+            // min-height: 250px;
         }
         img{
             position: absolute;

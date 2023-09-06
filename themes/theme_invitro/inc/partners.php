@@ -13,14 +13,14 @@
                                 the_row();
                                 $img = get_sub_field("image");
                                 $alt = $img["alt"];
-                                $title = $alt;
+                                $title = $img["title"];
                                 $src = $img["url"];
                                 $width = $img["width"];
                                 $height = $img["height"];
                                 ?>
                                 <li class="splide__slide">
                                     <img src="<?php echo $src ?>" alt="<?php echo $alt ?>" title="<?php echo $title ?>"
-                                        width="<?php echo $width ?>" height="<?php echo $height ?>" />
+                                        width="<?php echo $width ?>" height="<?php echo $height ?>" loading="lazy" />
                                 </li>
                             <?php } ?>
                         </ul>

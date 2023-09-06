@@ -18,7 +18,8 @@ get_header();
             <div class="row">
                 <div class="col">
                     <div class="contenido">
-                        <img src="<?php echo IMG; ?>/logo.svg">
+                        <img src="<?php echo IMG; ?>/logo.svg" width="365" height="78" title="Logo de Qualispharma"
+                            alt="Logo de Qualispharma">
                         <?php echo get_template_part('inc/information') ?>
                     </div>
                 </div>
@@ -34,12 +35,11 @@ get_header();
 
     <section class="contacto_mapa">
         <div class="contenedor">
-            <img src="<?php echo get_field('imagen_mapa')['url'] ?>" 
-                title="<?php echo get_field('imagen_mapa')['title'] ?>" 
-                alt="<?php echo get_field('imagen_mapa')['alt'] ?>" 
-                width="<?php echo get_field('imagen_mapa')['width'] ?>" 
-                height="<?php echo get_field('imagen_mapa')['height'] ?>" 
-                loading="lazy" class="w-100">
+            <img src="<?php echo get_field('imagen_mapa')['url'] ?>"
+                title="<?php echo get_field('imagen_mapa')['title'] ?>"
+                alt="<?php echo get_field('imagen_mapa')['alt'] ?>"
+                width="<?php echo get_field('imagen_mapa')['width'] ?>"
+                height="<?php echo get_field('imagen_mapa')['height'] ?>" loading="lazy" class="w-100">
         </div>
     </section>
 </main>

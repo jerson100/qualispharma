@@ -113,7 +113,7 @@ get_header();
                                 <li class="informacion__valores-item">
                                     <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['alt'] ?>"
                                         width="<?php echo $img['width'] ?>" height="<?php echo $img['height'] ?>"
-                                        tile="<?php echo $img['alt'] ?>" class="informacion__valores-img" />
+                                        title="<?php echo $img['title'] ?>" class="informacion__valores-img" />
                                     <p class="informacion__valores-title">
                                         <?php echo get_sub_field('title') ?>
                                     </p>
@@ -152,7 +152,7 @@ get_header();
                     ?>
                     <img src="<?php echo $image["url"] ?>" alt="<?php echo $image["alt"] ?>"
                         width="<?php echo $image["width"] ?>" height="<?php echo $image["height"] ?>"
-                        title="<?php echo $image["alt"] ?>" />
+                        title="<?php echo $image["title"] ?>" />
                 </div>
             </div>
         </div>

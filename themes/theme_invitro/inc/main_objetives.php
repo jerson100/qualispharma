@@ -19,7 +19,7 @@
                             $width = $image["width"];
                             $height = $image["height"];
                             $src = $image["url"];
-                            $title = $alt;
+                            $title = $image["title"];
                             ?>
                             <img src="<?php echo $src ?>" alt="<?php echo $alt ?>" width="<?php echo $width ?>"
                                 height="<?php echo $height ?>" title="<?php echo $title ?>">

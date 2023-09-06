@@ -19,14 +19,21 @@ get_header();
         <div class="contenedor">
             <div class="banner-bottom__content">
                 <div class="banner-bottom__bg-text">
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-                        mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
-                        quis enim.</p>
+                    <?php if (!empty(get_field("partners_labor_description"))): ?>
+                        <p>
+                            <?php echo get_field("partners_labor_description") ?>
+                        </p>
+                    <?php endif; ?>
                 </div>
                 <div class="banner-bottom__image">
-                    <img src="<?php echo IMG ?>/partner/feliz-medico-adulto-medio-hombre-negocios-senior-dandose-mano-despues-acuerdo-clinica.jpg"
-                        alt="" class="shadow-img">
+                    <?php
+                    $img = get_field("partners_labor_image");
+                    if (!empty($img)):
+                        ?>
+                        <img src="<?php echo $img["url"] ?>" alt="<?php echo $img["alt"] ?>"
+                            title="<?php echo $img["title"] ?>" width="<?php echo $img["width"] ?>"
+                            height="<?php echo $img["height"] ?>" loading="lazy" class="shadow-img">
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -35,10 +42,23 @@ get_header();
         <div class="contenedor">
             <div class="map__container">
                 <div class="map__left">
-                    <img src="<?php echo IMG ?>/partner/Grupo 13889.png" alt="">
+                    <?php
+                    $img = get_field("partners_map_img");
+                    if (!empty($img)):
+                        ?>
+                        <img src="<?php echo $img["url"] ?>" alt="<?php echo $img["alt"] ?>"
+                            title="<?php echo $img["title"] ?>" width="<?php echo $img["width"] ?>"
+                            height="<?php echo $img["height"] ?>" loading="lazy" />
+                    <?php endif; ?>
                 </div>
                 <div class="map__right">
-                    <p>Contamos con partners especializados en el extranjero</p>
+                    <?php
+                    if (get_field("partners_map_description")):
+                        ?>
+                        <p>
+                            <?php echo get_field("partners_map_description") ?>
+                        </p>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

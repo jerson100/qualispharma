@@ -27,12 +27,13 @@ get_header();
         </div>
         <div class="productos-alert__modal">
             <div class="productos-alert__modal-content">
-                <img src="<?php echo IMG ?>/logo.svg" alt="">
+                <img src="<?php echo IMG ?>/logo.svg" width="365" height="78" alt="Logo de Qualispharma"
+                    title="Logo de Qualispharma">
                 <p>Lo sentimos, nuestro portal de productos está dirigido solo para personal de la salud. Te invitamos a
                     seguir conociendo más de Qualis Pharma</p>
-                <a href="<?php echo esc_url(home_url() . "/") ?>" class="button button-variant-contained-verde">Volver
-                    al
-                    inicio</a>
+                <a href="<?php echo esc_url(home_url() . "/") ?>" title="Ir al inicio"
+                    class="button button-variant-contained-verde">Volver
+                    al inicio</a>
             </div>
         </div>
     </section>
@@ -64,7 +65,7 @@ get_header();
                             if (!empty($terms) && !is_wp_error($terms)) {
                                 echo '<ul class="custom-select-link__list">';
                                 foreach ($terms as $term) {
-                                    echo '<li class="custom-select-link__item"><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+                                    echo '<li class="custom-select-link__item"><a title="' . $term->name . '" href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
                                 }
                                 echo '</ul>';
                             }
@@ -109,7 +110,7 @@ get_header();
                                             <p><b>Vildagliptina 50 mg + Metformina 1000 mg</b>Caja x 30 tabletas</p>
                                         </div>
                                         <div class="product_info_link">
-                                            <a href="<?php the_permalink(); ?>">Ver más</a>
+                                            <a href="<?php the_permalink(); ?>" title="<?php echo get_the_title() ?>">Ver más</a>
                                         </div>
                                     </div>
                                 </div>

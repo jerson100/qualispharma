@@ -75,7 +75,8 @@ get_header();
                                                     <p>
                                                         <?php echo get_the_excerpt(); ?>
                                                     </p>
-                                                    <a href="<?php the_permalink() ?>">Ver más</a>
+                                                    <a href="<?php the_permalink() ?>" title="<?php echo get_the_title() ?>">Ver
+                                                        más</a>
                                                 </div>
                                                 <div class="card_product_image">
                                                     <img src="<?php echo get_field('single_product_vista')['url'] ?>"
@@ -124,7 +125,7 @@ get_header();
                     if (!empty($img)): ?>
                         <img class="shadow-img" src="<?php echo esc_url($img['url']); ?>"
                             width="<?php echo esc_attr($img['width']); ?>" height="<?php echo esc_attr($img['height']); ?>"
-                            alt="<?php echo esc_attr($img['title']); ?>" title="<?php echo esc_attr($img['title']); ?>"
+                            alt="<?php echo esc_attr($img['alt']); ?>" title="<?php echo esc_attr($img['title']); ?>"
                             loading="lazy" />
                     <?php endif; ?>
                 </div>
@@ -159,7 +160,7 @@ get_header();
                     if (!empty($img)): ?>
                         <img class="shadow-img" src="<?php echo esc_url($img['url']); ?>"
                             width="<?php echo esc_attr($img['width']); ?>" height="<?php echo esc_attr($img['height']); ?>"
-                            alt="<?php echo esc_attr($img['title']); ?>" title="<?php echo esc_attr($img['title']); ?>"
+                            alt="<?php echo esc_attr($img['alt']); ?>" title="<?php echo esc_attr($img['title']); ?>"
                             loading="lazy" />
                     <?php endif; ?>
                 </div>
@@ -256,7 +257,8 @@ get_header();
                 <div class="articles__ver-mas">
                     <a href="<?php
                     $inicio_url = home_url();
-                    echo esc_url($inicio_url . "/blog") ?>" class="button button-variant-contained-verde">Ver más</a>
+                    echo esc_url($inicio_url . "/blog") ?>" title="Ver más contenido del blog"
+                        class="button button-variant-contained-verde">Ver más</a>
                 </div>
             </div>
         </section>
@@ -305,7 +307,8 @@ get_header();
                 <div class="articles__ver-mas">
                     <a href="<?php
                     $inicio_url = home_url();
-                    echo esc_url($inicio_url . "/noticias") ?>" class="button button-variant-contained-verde">Ver
+                    echo esc_url($inicio_url . "/noticias") ?>" title="Ver más noticias"
+                        class="button button-variant-contained-verde">Ver
                         más</a>
                 </div>
             </div>

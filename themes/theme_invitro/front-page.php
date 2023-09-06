@@ -18,7 +18,7 @@ get_header();
                             <li class="splide__slide wh-100">
                                 <img src="<?php echo get_sub_field('imagen_fondo')['url'] ?>"
                                     title="<?php echo get_sub_field('imagen_fondo')['title'] ?>"
-                                    alt="<?php echo get_sub_field('imagen_fondo')['alt'] ?>"
+                                    alt="<?php echo get_sub_field('imagen_fondo')['title'] ?>"
                                     width="<?php echo get_sub_field('imagen_fondo')['width'] ?>"
                                     height="<?php echo get_sub_field('imagen_fondo')['height'] ?>" loading="lazy"
                                     class="wh-100">
@@ -30,9 +30,14 @@ get_header();
         <?php endif; ?>
         <div class="contenedor">
             <div class="contenido">
-                <h1>Nuestra prioridad es la salud de nuestros pacientes</h1>
-                <p>Variedad en productos, calidad, compromiso y confiabilidad.</p>
-                <a href="<?php echo esc_url(home_url() . "/contacto") ?>">Más información</a>
+                <h1>
+                    <?php echo get_field('inicio-title') ?>
+                </h1>
+                <p>
+                    <?php echo get_field('inicio-description') ?>
+                </p>
+                <a title="Más información" href="<?php echo esc_url(home_url() . "/contacto") ?>">Más
+                    información</a>
             </div>
         </div>
     </section>
@@ -56,8 +61,8 @@ get_header();
                 <div class="splide" id="productos">
                     <div class="splide__track">
                         <ul class="splide__list">
-                            <?php while (have_posts($wp_query)):
-                                the_post($wp_query); ?>
+                            <?php while ($wp_query->have_posts()):
+                                $wp_query->the_post(); ?>
                                 <?php if (!empty(get_field('vista'))): ?>
                                     <li class="splide__slide">
                                         <div class="card_product relative">
@@ -91,47 +96,72 @@ get_header();
             </div>
         </section>
     <?php endif; ?>
+    <?php wp_reset_postdata();
+    wp_reset_query(); ?>
+
 
     <section class="banner-bottom banner-bottom-nosotros">
         <div class="contenedor">
             <div class="banner-bottom__content">
                 <div class="banner-bottom__bg-text">
-                    <h2>Nosotros:</h2>
+                    <h2>
+                        <?php echo get_field('inicio-nosotros-titulo') ?>
+                    </h2>
                     <p>
-                        Somos una empresa farmacéutica con altos estándares de calidad, ofrecemos productos innovadores,
-                        productos de alta calidad que provienen de plantas certificadas por países de alta vigilancia.
-                        Todos nuestros productos cuentan con estudios de bioequivalencia.
+                        <?php echo get_field('inicio-nosotros-description') ?>
                     </p>
                     <div class="center">
                         <a href="<?php
                         $inicio_url = home_url();
-                        echo esc_url($inicio_url . "/nosotros") ?>" class="button button-variant-contained-verde">Ver
+                        echo esc_url($inicio_url . "/nosotros") ?>" title="Ver más"
+                            class="button button-variant-contained-verde">Ver
                             más</a>
                     </div>
                 </div>
                 <div class="banner-bottom__image">
-                    <img src="<?php echo IMG ?>/inicio/enfermera.jpg" class="shadow-img" loading="lazy">
+                    <?php
+                    $img = get_field('inicio-nosotros-img');
+                    if (!empty($img)): ?>
+                        <img class="shadow-img" src="<?php echo esc_url($img['url']); ?>"
+                            width="<?php echo esc_attr($img['width']); ?>" height="<?php echo esc_attr($img['height']); ?>"
+                            alt="<?php echo esc_attr($img['title']); ?>" title="<?php echo esc_attr($img['title']); ?>"
+                            loading="lazy" />
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="banner-bottom banner-bottom--reverse">
+    <?php
+    $classDirection = 'banner-bottom' . (get_field('description-qualivida-option') == false ? ' banner-bottom--reverse' : '');
+    ?>
+    <section class="<?php echo $classDirection ?>">
         <div class="contenedor">
-            <div class="banner-bottom__title">
-                <h2>Qualivida</h2>
-            </div>
+            <?php
+            if (!empty(get_field('Description-qualivida-title'))):
+                ?>
+                <div class="banner-bottom__title">
+                    <h2>
+                        <?php echo get_field('Description-qualivida-title') ?>
+                    </h2>
+                </div>
+                <?php
+            endif;
+            ?>
             <div class="banner-bottom__content">
                 <div class="banner-bottom__bg-text">
                     <p>
-                        El programa Qualivida ha sido diseñado para apoyar a los pacientes a obtener los medicamentos
-                        recetados por el médico a un precio asequible, mejorar la adherencia al tratamiento y mejorar la
-                        calidad de vida de los pacientes.
+                        <?php echo get_field('description-qualivida-description') ?>
                     </p>
                 </div>
                 <div class="banner-bottom__image">
-                    <img src="<?php echo IMG ?>/qualivida/shot-of-a-young-pharmacist-helping-an-elderly-cust-2022-12-12-19-38-43-utc.jpg"
-                        class="shadow-img" loading="lazy">
+                    <?php
+                    $img = get_field('description-qualivida-image');
+                    if (!empty($img)): ?>
+                        <img class="shadow-img" src="<?php echo esc_url($img['url']); ?>"
+                            width="<?php echo esc_attr($img['width']); ?>" height="<?php echo esc_attr($img['height']); ?>"
+                            alt="<?php echo esc_attr($img['title']); ?>" title="<?php echo esc_attr($img['title']); ?>"
+                            loading="lazy" />
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

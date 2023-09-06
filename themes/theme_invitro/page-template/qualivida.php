@@ -16,24 +16,42 @@ get_header();
         </div>
     </section>
 
-    <section class="banner-bottom">
+    <?php
+    $classDirection = 'banner-bottom' . (get_field('description-qualivida-option') == false ? ' banner-bottom--reverse' : '');
+    ?>
+    <section class="<?php echo $classDirection ?>">
         <div class="contenedor">
+            <?php
+            if (!empty(get_field('Description-qualivida-title'))):
+                ?>
+                <div class="banner-bottom__title">
+                    <h2>
+                        <?php echo get_field('Description-qualivida-title') ?>
+                    </h2>
+                </div>
+                <?php
+            endif;
+            ?>
             <div class="banner-bottom__content">
                 <div class="banner-bottom__bg-text">
                     <p>
-                        <?php echo get_field('descripcion_des') ?>
+                        <?php echo get_field('description-qualivida-description') ?>
                     </p>
                 </div>
                 <div class="banner-bottom__image">
-                    <img src="<?php echo get_field('imagen_des')['url'] ?>"
-                        alt="<?php echo get_field('imagen_des')['alt'] ?>"
-                        title="<?php echo get_field('imagen_des')['title'] ?>"
-                        width="<?php echo get_field('imagen_des')['width'] ?>"
-                        height="<?php echo get_field('imagen_des')['height'] ?>" class="shadow-img" loading="lazy">
+                    <?php
+                    $img = get_field('description-qualivida-image');
+                    if (!empty($img)): ?>
+                        <img class="shadow-img" src="<?php echo esc_url($img['url']); ?>"
+                            width="<?php echo esc_attr($img['width']); ?>" height="<?php echo esc_attr($img['height']); ?>"
+                            alt="<?php echo esc_attr($img['title']); ?>" title="<?php echo esc_attr($img['title']); ?>"
+                            loading="lazy" />
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
     </section>
+
     <div class="bg-celeste">
         <?php get_template_part('inc/main_objetives'); ?>
     </div>

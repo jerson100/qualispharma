@@ -19,10 +19,12 @@ get_header();
     <section class="somos">
         <div class="contenedor">
             <div class="contenido">
-                <h2>¿Quiénes somos?</h2>
-                <p>Somos una empresa farmacéutica con altos estándares de calidad, ofrecemos productos innovadores,
-                    productos de alta calidad que provienen de plantas certificadas por países de alta vigilancia. Todos
-                    nuestros productos cuentan con estudios de bioequivalencia</p>
+                <h2>
+                    <?php echo get_field("quienes-somos-title") ?>
+                </h2>
+                <p>
+                    <?php echo get_field("quienes-somos-description") ?>
+                </p>
             </div>
         </div>
     </section>
@@ -47,11 +49,14 @@ get_header();
                                 d="M-502.369,1049.094a26.3,26.3,0,0,0,26.439-25.777c.1-3.24,2.014-5.34,4.8-5.27,2.693.067,4.427,2.2,4.471,5.384a31.47,31.47,0,0,1-.788,6.908c-3.253,15.5-17.046,27.079-32.825,28.036a35.747,35.747,0,0,1-37.611-31.218A35.706,35.706,0,0,1-507.646,987.3a29.445,29.445,0,0,1,5.032-.34,4.677,4.677,0,0,1,4.86,4.461,4.617,4.617,0,0,1-4.577,4.752,34.286,34.286,0,0,0-7.219,1.027,26.59,26.59,0,0,0-19.256,27.733c.695,11.174,9.893,21.618,21.412,23.762A26.5,26.5,0,0,0-502.369,1049.094Z"
                                 transform="translate(591.964 -933.71)" fill="#fff" />
                         </svg>
-                        <h3 class="card-information__title">Misión</h3>
+                        <h3 class="card-information__title">
+                            <?php echo get_field("nosotros-mision-title") ?>
+                        </h3>
                     </div>
                     <div class="card-information__body">
-                        <p>Nos comprometemos a garantizar la seguridad de nuestros productos y a cumplir con los
-                            estándares regulatorios y de calidad en todas nuestras operaciones</p>
+                        <p>
+                            <?php echo get_field("nosotros-mision-description") ?>
+                        </p>
                     </div>
                 </section>
                 <section class="card-information card-information--yellow">
@@ -84,33 +89,39 @@ get_header();
                                 d="M193.584,1056.461a18.05,18.05,0,1,1,17.969,18.051A18.183,18.183,0,0,1,193.584,1056.461Zm18.084-7.193a7.193,7.193,0,1,0,7.159,7.312A7.4,7.4,0,0,0,211.668,1049.268Z"
                                 transform="translate(-122.362 -967.188)" fill="#fff" />
                         </svg>
-                        <h3 class="card-information__title">Visión</h3>
+                        <h3 class="card-information__title">
+                            <?php echo get_field("nosotros-vision-title") ?>
+                        </h3>
                     </div>
                     <div class="card-information__body">
-                        <p>Nos enfocamos en satisfacer las necesidades y expectativas de los pacientes y en
-                            ofrecerles
-                            un tratamiento efectivo y seguro</p>
+                        <p>
+                            <?php echo get_field("nosotros-vision-description") ?>
+                        </p>
                     </div>
                 </section>
                 <section class="informacion__valores">
-                    <h3 class="h2 down informacion__valores-section-title">Valores</h3>
+                    <h3 class="h2 down informacion__valores-section-title">
+                        <?php echo get_field("nosotros_valores_title") ?>
+                    </h3>
                     <ul class="informacion__valores-list">
-                        <li class="informacion__valores-item">
-                            <img src="<?php echo IMG ?>/nosotros/01.svg" alt="" class="informacion__valores-img" />
-                            <p class="informacion__valores-title">Calidad</p>
-                        </li>
-                        <li class="informacion__valores-item">
-                            <img src="<?php echo IMG ?>/nosotros/02.svg" alt="" class="informacion__valores-img" />
-                            <p class="informacion__valores-title">Compromiso</p>
-                        </li>
-                        <li class="informacion__valores-item">
-                            <img src="<?php echo IMG ?>/nosotros/03.svg" alt="" class="informacion__valores-img" />
-                            <p class="informacion__valores-title">Seguridad</p>
-                        </li>
-                        <li class="informacion__valores-item">
-                            <img src="<?php echo IMG ?>/nosotros/04.svg" alt="" class="informacion__valores-img" />
-                            <p class="informacion__valores-title">Orientación al paciente</p>
-                        </li>
+                        <?php
+                        if (have_rows('nosotros-valores-list')):
+                            while (have_rows('nosotros-valores-list')):
+                                the_row();
+                                $img = get_sub_field('icon');
+                                ?>
+                                <li class="informacion__valores-item">
+                                    <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['alt'] ?>"
+                                        width="<?php echo $img['width'] ?>" height="<?php echo $img['height'] ?>"
+                                        tile="<?php echo $img['alt'] ?>" class="informacion__valores-img" />
+                                    <p class="informacion__valores-title">
+                                        <?php echo get_sub_field('title') ?>
+                                    </p>
+                                </li>
+                                <?php
+                            endwhile;
+                        endif;
+                        ?>
                     </ul>
                 </section>
             </div>
@@ -118,10 +129,12 @@ get_header();
     </section>
     <section class="capacidades">
         <div class="contenedor">
-            <h2>Capacidades</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                massa.
-                Cum sociis natoque penatibus et magnis dis parturient montes</p>
+            <h2>
+                <?php echo get_field("nosotros_capacidades_title") ?>
+            </h2>
+            <p>
+                <?php echo get_field("nosotros_capacidades_description") ?>
+            </p>
             <div class="capacidades__content">
                 <div class="capacidades__left">
                     <ul>
@@ -134,8 +147,12 @@ get_header();
                     </ul>
                 </div>
                 <div class="capacidades__right">
-                    <img src="<?php echo IMG ?>/nosotros/young-caucasian-pharmacist-and-indian-female-pharm-2022-10-21-21-00-40-utc.jpg"
-                        alt="">
+                    <?php
+                    $image = get_field("nosotros_capacidades_image");
+                    ?>
+                    <img src="<?php echo $image["url"] ?>" alt="<?php echo $image["alt"] ?>"
+                        width="<?php echo $image["width"] ?>" height="<?php echo $image["height"] ?>"
+                        title="<?php echo $image["alt"] ?>" />
                 </div>
             </div>
         </div>
